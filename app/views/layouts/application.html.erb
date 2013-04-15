@@ -4,7 +4,6 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
-  <%= javascript_include_tag "application" %>
   <%= render 'layouts/shim' %>
   <style>
   .navbar .nav > li > a:focus,
@@ -19,7 +18,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3f03', endColorstr='#ff754f',GradientType=0 ); /* IE6-9 */
     color: white;
   }
-  
+
   </style>
 </head>
 <body>
@@ -32,5 +31,6 @@
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
   </div>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
