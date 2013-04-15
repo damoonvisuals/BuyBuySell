@@ -2,12 +2,22 @@ Buybuysell::Application.routes.draw do
   # Navigates /users/1/following /users/1/followed
   resources :users do
     member do
-      get :following, :followers
+      get :following
     end
   end
+
+  # Navigates /listings/1/followers
+  resources :listings do
+    member do
+      get :followers
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :listings, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :listing_relationships, only: [:create, :destroy]
   get 'tags/:tag', to: 'static_pages#home', as: :tag
 
   root to: 'static_pages#home'

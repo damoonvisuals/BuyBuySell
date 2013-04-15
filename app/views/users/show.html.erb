@@ -14,12 +14,13 @@
 
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
+    <% if @user.listings.any? %>
+      <h3>Listings (<%= @user.listings.count %>)</h3>
+      <ol class="listings">
+        <!-- This references partial listings/_listing.html.erb -->
+        <%= render @listings %>
       </ol>
-      <%= will_paginate @microposts %>
+      <%= will_paginate @listings %>
     <% end %>
   </div>
 </div>

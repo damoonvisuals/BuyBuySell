@@ -1,21 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>    
-  </head>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
-    </div>
-  </body>
+<html ng-app>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "application" %>
+  <%= render 'layouts/shim' %>
+  <style>
+  .navbar .nav > li > a:focus,
+  .navbar .nav > li > a:hover {
+    background-color: #ff3f03;
+    color: white;
+  }
+
+  .search-field {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: none;
+    color: #34495E;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 23px;
+    margin: 0;
+    height: 30px;
+    padding: 5px 0;
+    text-indent: 0;
+  }
+  </style>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+</body>
 </html>

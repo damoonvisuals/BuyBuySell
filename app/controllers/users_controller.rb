@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    # @microposts = @user.microposts.paginate(page: params[:page])
+    @listings = @user.listings.paginate(page: params[:page])
   end
 
   def new
@@ -51,18 +52,18 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = "Following"
+    @title = "Starred"
     @user = User.find(params[:id])
-    @users = @user.followed_users.paginate(page: params[:page])
+    @users = @user.followed_listings.paginate(page: params[:page])
     render 'show_follow'
   end
 
-  def followers
-    @title = "Followers"
-    @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
-  end
+  # def followers
+  #   @title = "Followers"
+  #   @user = User.find(params[:id])
+  #   @users = @user.followers.paginate(page: params[:page])
+  #   render 'show_follow'
+  # end
   
   private
 
