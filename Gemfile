@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'bootstrap-sass', '2.1'
+gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
@@ -29,10 +29,6 @@ group :assets do
   gem 'uglifier', '1.2.3'
 
   gem 'angularjs-rails'
-
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "therubyracer"
-  gem 'twitter-bootstrap-rails'
 end
 
 group :test do
