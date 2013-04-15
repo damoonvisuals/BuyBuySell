@@ -6,7 +6,7 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
 
 gem 'jquery-rails', '2.0.2'
@@ -22,7 +22,6 @@ end
 
 group :development do
   gem 'annotate', '2.5.0'
-  gem 'therubyracer', :platforms => :ruby, :require => 'v8'
 end
 
 # Gems used only for assets and not required
@@ -32,7 +31,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-
+  gem 'therubyracer', :platforms => :ruby
   gem 'angularjs-rails'
 end
 
