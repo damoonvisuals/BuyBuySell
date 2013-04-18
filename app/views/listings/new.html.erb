@@ -1,0 +1,6 @@
+<% if signed_in? %>
+  <h1>Create New Listing</h1>
+  <%= render 'shared/listing_form' %>
+<% else %>
+<p>Please sign in first..</p>
+<% end %>
