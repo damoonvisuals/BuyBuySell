@@ -5,29 +5,19 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
-  <style>
-  .navbar .nav > li > a:focus,
-  .navbar .nav > li > a:hover {
-    text-shadow: 0 1px 0 #000000;
-  }
-  </style>
 </head>
 <body style='font-family: "Quicksand";'>
   <%= render 'layouts/header' %>
-  <div class="row">
-    <div class="span1">
-      <%= render 'layouts/sidebar' %>
-    </div>
-    <div class="span11">
-      <div class="container" style="padding-top:15px;">
-        <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-        <% end %>
-        <%= yield %>
-        <%= render 'layouts/footer' %>
-        <%= debug(params) if Rails.env.development? %>
-      </div>
-    </div>
+  <div class="bs-docs-sidebar">
+    <%= render 'layouts/sidebar' %>
+  </div>
+  <div class="container" style="padding-top:15px; padding-left:60px; padding-right: 8px;">
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </div>
   <%= javascript_include_tag "application" %>
 </body>

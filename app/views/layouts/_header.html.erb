@@ -1,19 +1,10 @@
 <header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </a>
-    <%= link_to "buybuysell.org", root_path, id: "logo" %>
-    <div class="nav-collapse">
-      <ul class="nav">
-        <% if signed_in? %>
-        <li><%= link_to "Starred", listings_path %></li>
-        <% else %>
-        <li><%= link_to "Home", root_path %></li>
-        <% end %>
-      </ul>
+  <div class="navbar-inner" style="min-width:640px;">
+    <div class="container" style="margin-left:0px; margin-right:0px; width:100%;">
+      <%= link_to "buybuysell.org", root_path, id: "logo" %>
+        <form class="navbar-search">
+          <input type="text" class="search-query" placeholder="Search for Anything...">
+        </form>
       <ul class="nav pull-right">
         <% if signed_in? %>
         <li id="fat-menu" class="dropdown">
@@ -33,6 +24,7 @@
         <li><%= link_to "Sign in", signin_path %></li>
         <% end %>
       </ul>
-    </div><!--/.nav-collapse -->
+
+    </div>
   </div>
 </header>

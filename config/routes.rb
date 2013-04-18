@@ -13,23 +13,26 @@ Buybuysell::Application.routes.draw do
     end
   end
 
+  resources :beta_users, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
   resources :listings, only: [:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
   resources :listing_relationships, only: [:create, :destroy]
   get 'tags/:tag', to: 'static_pages#home', as: :tag
 
   root to: 'static_pages#home'
 
+  match '/beta_signup', to: 'beta_users#new'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   #Should be invoked using HTTP DELETE Request
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  match '/create_listing', to: 'listings#new'
+
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

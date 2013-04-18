@@ -14,8 +14,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
 
-  # dependent: :destroy makes microposts destroyed when user destroyed
-  has_many :microposts, dependent: :destroy
+  # dependent: :destroy makes listings destroyed when user destroyed
   has_many :listings, dependent: :destroy
 
   has_many :listing_relationships, foreign_key: "follower_id", dependent: :destroy

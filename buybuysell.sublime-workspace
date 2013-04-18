@@ -16,29 +16,10 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html ng-app>\n<head>\n  <title><%= full_title(yield(:title)) %></title>\n  <%= stylesheet_link_tag    \"application\", media: \"all\" %>\n  <%= csrf_meta_tags %>\n  <%= render 'layouts/shim' %>\n  <style>\n    .navbar .nav > li > a:focus,\n    .navbar .nav > li > a:hover {\n      background: #ff3f03; /* Old browsers */\n      background: -moz-linear-gradient(top, #ff3f03 0%, #ff754f 100%); /* FF3.6+ */\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3f03), color-stop(100%,#ff754f)); /* Chrome,Safari4+ */\n      background: -webkit-linear-gradient(top, #ff3f03 0%,#ff754f 100%); /* Chrome10+,Safari5.1+ */\n      background: -o-linear-gradient(top, #ff3f03 0%,#ff754f 100%); /* Opera 11.10+ */\n      background: -ms-linear-gradient(top, #ff3f03 0%,#ff754f 100%); /* IE10+ */\n      background: linear-gradient(to bottom, #ff3f03 0%,#ff754f 100%); /* W3C */\n      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3f03', endColorstr='#ff754f',GradientType=0 ); /* IE6-9 */\n      color: white;\n    }\n  </style>\n</head>\n<body>\n  <%= render 'layouts/header' %>\n  <div class=\"container\">\n    <% flash.each do |key, value| %>\n    <div class=\"alert alert-<%= key %>\"><%= value %></div>\n    <% end %>\n    <%= yield %>\n    <%= render 'layouts/footer' %>\n    <%= debug(params) if Rails.env.development? %>\n  </div>\n  <%= javascript_include_tag \"application\" %>\n</body>\n</html>\n",
 			"file": "app/views/layouts/application.html.erb",
-			"file_size": 1404,
-			"file_write_time": 1366050914000000,
 			"settings":
 			{
-				"buffer_size": 1427,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 1017,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/application.rb",
-			"settings":
-			{
-				"buffer_size": 3116,
+				"buffer_size": 912,
 				"line_ending": "Unix"
 			}
 		},
@@ -46,7 +27,39 @@
 			"file": "app/views/static_pages/home.html.erb",
 			"settings":
 			{
-				"buffer_size": 642,
+				"buffer_size": 645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/_header.html.erb",
+			"settings":
+			{
+				"buffer_size": 1306,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/beta_users_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2071,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 2698,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
+			"settings":
+			{
+				"buffer_size": 5416,
 				"line_ending": "Unix"
 			}
 		}
@@ -79,28 +92,37 @@
 	},
 	"file_history":
 	[
+		"/home/dasun/BuyBuySell/app/views/layouts/_sidebar.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
-		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
+		"/home/dasun/BuyBuySell/app/controllers/users_controller.rb",
+		"/home/dasun/BuyBuySell/config/routes.rb",
+		"/home/dasun/BuyBuySell/app/models/beta_user.rb",
+		"/home/dasun/BuyBuySell/app/models/user.rb",
+		"/home/dasun/BuyBuySell/app/views/static_pages/contact.html.erb",
+		"/home/dasun/BuyBuySell/app/views/static_pages/help.html.erb",
+		"/home/dasun/BuyBuySell/config/application.rb",
+		"/home/dasun/BuyBuySell/config/initializers/mime_types.rb",
+		"/home/dasun/BuyBuySell/app/views/static_pages/about.html.erb",
+		"/home/dasun/BuyBuySell/app/helpers/application_helper.rb",
+		"/home/dasun/BuyBuySell/app/views/shared/_user_info.html.erb",
+		"/home/dasun/Downloads/Brand CSS Color Gradients.txt",
 		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
 		"/home/dasun/BuyBuySell/Gemfile",
+		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
+		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/application.js",
-		"/home/dasun/BuyBuySell/app/controllers/users_controller.rb",
 		"/home/dasun/BuyBuySell/app/assets/stylesheets/application.css.scss",
 		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_andoverrides.css.scss",
 		"/home/dasun/BuyBuySell/app/views/shared/_feed_item.html.erb",
 		"/home/dasun/BuyBuySell/app/controllers/listings_controller.rb",
 		"/home/dasun/BuyBuySell/app/assets/stylesheets/application.css",
-		"/home/dasun/BuyBuySell/config/routes.rb",
 		"/home/dasun/BuyBuySell/app/controllers/microposts_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/static_pages/home.html.erb",
 		"/home/dasun/BuyBuySell/app/views/layouts/_footer.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/stylesheets/custom.css.scss",
 		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
-		"/home/dasun/BuyBuySell/config/application.rb",
 		"/home/dasun/BuyBuySell/app/models/listing.rb",
-		"/home/dasun/BuyBuySell/app/models/user.rb",
 		"/home/dasun/BuyBuySell/app/uploaders/image_uploader.rb",
 		"/home/dasun/BuyBuySell/app/views/shared/_stats.html.erb",
 		"/home/dasun/BuyBuySell/app/models/listing_relationship.rb",
@@ -115,9 +137,6 @@
 		"/home/dasun/BuyBuySell/app/views/shared/_micropost_form.html.erb",
 		"/home/dasun/BuyBuySell/app/models/micropost.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130414231203_create_listings.rb",
-		"/home/dasun/BuyBuySell/app/views/static_pages/contact.html.erb",
-		"/home/dasun/BuyBuySell/app/helpers/application_helper.rb",
-		"/home/dasun/BuyBuySell/app/views/static_pages/about.html.erb",
 		"/home/dasun/BuyBuySell/app/views/static_pages/projects.html.erb",
 		"/home/dasun/dasun.us/app/views/static_pages/projects.html.erb",
 		"/home/dasun/BuyBuySell/README.md",
@@ -200,9 +219,7 @@
 		"/home/dasun/dasun.us/spec/spec_helper.rb",
 		"/home/dasun/dasun.us/README.md",
 		"/home/dasun/.config/sublime-text-2/Packages/RubyTest/TestConsole.hidden-tmTheme",
-		"/home/dasun/.config/sublime-text-2/Packages/RubyTest/RubyTest.sublime-settings",
-		"/usr/share/applications/sublime.desktop",
-		"/usr/share/applications/defaults.list"
+		"/home/dasun/.config/sublime-text-2/Packages/RubyTest/RubyTest.sublime-settings"
 	],
 	"find":
 	{
@@ -222,6 +239,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"black",
+			"top ",
+			"asset-url",
 			"config.assets",
 			"precompile",
 			"center",
@@ -257,7 +277,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -265,15 +285,15 @@
 					"file": "app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 1427,
+						"buffer_size": 912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1269,
-								1269
+								146,
+								146
 							]
 						],
 						"settings":
@@ -283,30 +303,30 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 153.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Gemfile",
+					"file": "app/views/static_pages/home.html.erb",
 					"settings":
 					{
-						"buffer_size": 1017,
+						"buffer_size": 645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								223,
-								223
+								139,
+								139
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -318,46 +338,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "config/application.rb",
+					"file": "app/views/layouts/_header.html.erb",
 					"settings":
 					{
-						"buffer_size": 3116,
+						"buffer_size": 1306,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3054,
-								3054
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 770.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/static_pages/home.html.erb",
-					"settings":
-					{
-						"buffer_size": 642,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								552,
-								552
+								384,
+								384
 							]
 						],
 						"settings":
@@ -368,6 +360,90 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/beta_users_controller.rb",
+					"settings":
+					{
+						"buffer_size": 2071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 2698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								605,
+								605
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
+					"settings":
+					{
+						"buffer_size": 5416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4310,
+								4310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3159.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -421,20 +497,60 @@
 		"selected_items":
 		[
 			[
-				"hom",
-				"app/views/static_pages/home.html.erb"
+				"boot",
+				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+			],
+			[
+				"routes",
+				"config/routes.rb"
 			],
 			[
 				"appli",
 				"config/application.rb"
 			],
 			[
-				"gemfil",
-				"Gemfile"
+				"m",
+				"config/initializers/mime_types.rb"
+			],
+			[
+				"help",
+				"app/views/static_pages/help.html.erb"
+			],
+			[
+				"contact",
+				"app/views/static_pages/contact.html.erb"
+			],
+			[
+				"about",
+				"app/views/static_pages/about.html.erb"
+			],
+			[
+				"_user",
+				"app/views/shared/_user_info.html.erb"
+			],
+			[
+				"_header",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"applica",
+				"config/application.rb"
 			],
 			[
 				"appl",
-				"app/views/layouts/application.html.erb"
+				"config/application.rb"
+			],
+			[
+				"header",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"hom",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"gemfil",
+				"Gemfile"
 			],
 			[
 				"gem",
@@ -445,16 +561,8 @@
 				"app/views/layouts/application.html.erb"
 			],
 			[
-				"header",
-				"app/views/layouts/_header.html.erb"
-			],
-			[
 				"listin",
 				"app/controllers/listings_controller.rb"
-			],
-			[
-				"routes",
-				"config/routes.rb"
 			],
 			[
 				"users",
@@ -653,20 +761,12 @@
 				"spec/requests/authentication_pages_spec.rb"
 			],
 			[
-				"_user",
-				"app/views/users/_user.html.erb"
-			],
-			[
 				"users_control",
 				"app/controllers/users_controller.rb"
 			],
 			[
 				"index",
 				"app/views/users/index.html.erb"
-			],
-			[
-				"_header",
-				"app/views/layouts/_header.html.erb"
 			],
 			[
 				"sessions_",
@@ -727,6 +827,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 411.0,
+	"side_bar_width": 253.0,
 	"status_bar_visible": true
 }

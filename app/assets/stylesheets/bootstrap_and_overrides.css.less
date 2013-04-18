@@ -1,10 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
 
-body {
-  padding-top:50px;
-  padding-bottom:40px;
-}
-
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -14,13 +9,13 @@ body {
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
 // Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
 //       have the proper paths. So for now we use the absolute path.
-@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot?v=3.0.2");
-@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot?#iefix&v=3.0.2");
-@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff?v=3.0.2");
-@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf?v=3.0.2");
+//@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot?v=3.0.2");
+//@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot?#iefix&v=3.0.2");
+//@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff?v=3.0.2");
+//@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf?v=3.0.2");
 
 // Font Awesome
-@import "fontawesome";
+//@import "fontawesome";
 
 // Glyphicons
 //@import "twitter/bootstrap/sprites.less";
@@ -45,15 +40,17 @@ body {
 }
 
 //Sidebar Options
-#bbs-toolbar {
+.bs-docs-sidenav {
+    background-color: #e7e7e7;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 4px 4px 4px;
     li {
-        width: 69px;
+        max-width: 50px;
         a {
-            padding: 10px 10px 10px 18px;
-            object {
-                width: 30px;
-                height: 30px;
-            }
+            padding: 10px 10px 10px 10px;
+        }
+        a:hover {
+            background-color: #ff3f03;
         }
     }
 }
@@ -66,30 +63,117 @@ body {
 @navbarLinkColorHover: @white;
 @navbarLinkColorActive: @white;
 @navbarLinkBackgroundHover: #ff3f03;
-@navbarLinkBackgroundActive: #ff3f03;
+@navbarLinkBackgroundActive: @gray;
 
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+    text-shadow: 0 1px 0 #000000;
+}
+.navbar-fixed-top {
+    margin-bottom: 0px;
+}
+.navbar-fixed-bottom, .navbar-static-top {
+    margin-right: 0px;
+}
+.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+    margin-left: 0px;
+    margin-right: 0px;
+    position: fixed;
+}
+.navbar-inner {
+    height: 50px;
+}
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+    padding: 0px;
+} 
 #logo {
     float: left;
-    margin-right: 10px;
-    margin-left: 10px;
     font-size: 1.5em;
     color: @black;
     letter-spacing: -1px;
-    padding-top: 15px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-weight: bold;
     line-height: 1;
 }
 #logo:hover {
-    color: @black;
+    color: @white;
+    text-shadow: 0 1px 0 #000000;
     text-decoration: none;
+    background-color: #ff3f03;
+}
+
+//Search Bar
+.navbar-search {
+    margin-top: 5px;
+    float: left;
+    //width: 80%;
+}
+.navbar-search .search-query {
+    font-family: "Quicksand";
+    font-size: 15px;
+    border-radius: 4px 4px 4px 4px;
+    padding: 12px 12px 12px 40px;
+    background: asset-url("header/search.svg") no-repeat scroll 10px 10px;
+    background-color: white;
+    background-size: 20px 20px;
+
+    min-width: 300px;
+    width: 50%;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .search-query .uneditable-input:focus {
+    border-color: #ff3f03;
+    box-shadow: none;
+    transition: none;
+    color: black;
+}
+
+//Footer Options
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #999999;
+    a {
+        color: #555555;
+        padding: 7px;
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+        }
+    }
+    small {
+        float: left;
+    }
+    a:hover {
+        background-color: #ff3f03;
+        color: @white;
+        text-shadow: 0 1px 0 #000000;
+        text-decoration: none;
+    }
 }
 
 
 html {
     overflow-y: scroll;
 }
+body {
+    padding-top:50px;
+    padding-bottom:40px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 section {
     overflow: auto;
+}
+input, textarea, .uneditable-input {
+    width: 100%;
 }
 h3 {
     font-size: 1.5em;
@@ -122,15 +206,6 @@ h3 {
     }
 }
 
-input, textarea, select, .uneditable-input {
-    border: 1px solid #bbb;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
 .users {
     list-style: none;
     margin: 0;
@@ -179,29 +254,7 @@ aside {
         margin-bottom: 5px;
     }
 }
-footer {
-    margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid #eaeaea;
-    color: #999999;
-    a {
-        color: #555555;
-    }
-    ul {
-        float: right;
-        list-style: none;
-        li {
-            float: left;
-            margin-left: 10px;
-        }
-    }
-    small {
-        float: left;
-    }
-    a:hover {
-        color: #222222;
-    }
-}
+
 .debug_dump {
     clear: both;
     float: left;
@@ -225,14 +278,6 @@ h1 {
 .gravatar {
     float: left;
     margin-right: 10px;
-}
-.microposts {
-    list-style: none;
-    margin: 10px 0 0 0;
-    li {
-        padding: 10px 0;
-        border-top: 1px solid #e8e8e8;
-    }
 }
 h2 {
     font-size: 1.7em;
@@ -264,4 +309,13 @@ h2 {
 }
 input {
     height: auto !important;
+}
+
+
+//Javascript Elements
+
+//Tooltips
+.tooltip-inner {
+    max-width: none;
+    width: 100px;
 }

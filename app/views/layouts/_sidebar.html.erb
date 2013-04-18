@@ -1,26 +1,27 @@
-<div id="bbs-toolbar">
-  <div class="navbar navbar-fixed-left">
-    <div class="navbar-inner" style="padding-left:0px;">
-      <ul class="nav">
-        <li>
-          <a href="#"><object data=<%= asset_path 'sidebar/starred.svg' %> type="image/svg+xml"></object></a>
-        </li>
-        <li>
-          <a href="#"><object data=<%= asset_path 'sidebar/addlisting.svg' %> type="image/svg+xml"></object></a>
-        </li>
-        <li>
-          <a href="#"><object data=<%= asset_path 'sidebar/search.svg' %> type="image/svg+xml"></object></a>
-        </li>
-        <li>
-          <a href="#"><object data=<%= asset_path 'sidebar/categories_tag.svg' %> type="image/svg+xml"></object></a>
-        </li>
-        <li>
-          <a href="#"><object data=<%= asset_path 'sidebar/profile.svg' %> type="image/svg+xml"></object></a>
-        </li>
-        <li>
-          <a href="#"><object data=<%= asset_path 'sidebar/messages.svg' %> type="image/svg+xml"></object></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<ul class="nav nav-list bs-docs-sidenav affix">
+  <li>
+    <a rel="tooltip" href="#" title="Starred Listings" data-placement="right">
+      <%= image_tag 'sidebar/starred.svg', size: "30x30" %>
+    </a>
+  </li>
+  <li>
+    <a data-placement="right" rel="tooltip" href="#" title="Messages">
+      <%= image_tag 'sidebar/messages.svg', size: "30x30" %>
+    </a>
+  </li>
+  <li>
+    <a data-placement="right" rel="tooltip" href="#" title="Categories">
+      <%= image_tag 'sidebar/categories_tag.svg', size: "30x30" %>
+    </a>
+  </li>
+  <li>
+    <a data-placement="right" rel="tooltip" href="#" title="Your Listings">
+      <%= image_tag 'sidebar/profile.svg', size: "30x30" %>
+    </a>
+  </li>
+  <li>
+    <a data-placement="right" rel="tooltip" href="<%= create_listing_path %>" title="Create Listing">
+      <%= image_tag 'sidebar/addlisting.svg', size: "30x30" %>
+    </a>
+  </li>
+</ul>

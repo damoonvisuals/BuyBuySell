@@ -1,13 +1,13 @@
 <%= form_for(@listing) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
-<p>
-  <%= f.file_field :image %>
-</p>
+<div class="field">
+  <%= f.file_field :image, placeholder: "Upload photos" %>
+</div>
 <div class="field">
   <%= f.text_area :description, placeholder: "Compose new listing..." %>
 </div>
 <div class="field">
   <%= f.text_field :tag_list, placeholder: "Tags (separated by commas)" %>
 </div>
-<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<%= f.submit "Create Listing", class: "btn btn-large btn-primary" %>
 <% end %>
