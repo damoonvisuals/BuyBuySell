@@ -1,26 +1,28 @@
-<% provide(:title, @user.name) %>
+<!-- Displays on calls to users/1/ -->
+
+<% provide(:title, @user.user_name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span3">
     <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+      <%= render 'shared/user_info' %>
     </section>
     <section>
       <%= render 'shared/stats' %>
     </section>
   </aside>
 
-  <div class="span8">
+  <div class="span9">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.listings.any? %>
-      <h3>Listings (<%= @user.listings.count %>)</h3>
+      <h3>My Listings (<%= @user.listings.count %>)</h3>
       <ol class="listings">
         <!-- This references partial listings/_listing.html.erb -->
         <%= render @listings %>
       </ol>
       <%= will_paginate @listings %>
+    <% else %>
+      <h3>No Current Listings</h3>
+      <%= link_to "Create New Listing", create_listing_path, class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

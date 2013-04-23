@@ -6,3 +6,11 @@ en:
     attributes:
       user:
         password_digest: "Password"
+    errors:
+      models:
+        user:
+          attributes:
+            user_name:
+              invalid: "can only contain letters, digits, underscores, and hyphens"
+            password:
+              invalid: "must contain a capital letter and a number"

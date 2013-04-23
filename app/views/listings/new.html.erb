@@ -1,6 +1,14 @@
-<% if signed_in? %>
-  <h1>Create New Listing</h1>
-  <%= render 'shared/listing_form' %>
-<% else %>
-<p>Please sign in first..</p>
-<% end %>
+<% provide(:title, 'Create New Listing') %>
+
+<h1>Create New Listing</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@listing) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= render 'fields', f: f %>
+    <div class="btn-group-wrap">
+      <%= f.submit "Create Listing", class: "btn btn-large btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -21,7 +21,6 @@ Buybuysell::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match '/beta_signup', to: 'beta_users#new'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   #Should be invoked using HTTP DELETE Request

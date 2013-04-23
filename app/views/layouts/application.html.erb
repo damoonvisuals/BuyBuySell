@@ -6,12 +6,17 @@
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
-<body style='font-family: "Quicksand";'>
+<body style='font-family: "Quicksand", Arial, sans-serif;'>
   <%= render 'layouts/header' %>
+  <% if signed_in? %>
   <div class="bs-docs-sidebar">
     <%= render 'layouts/sidebar' %>
   </div>
-  <div class="container" style="padding-top:15px; padding-left:60px; padding-right: 8px;">
+  <div class="container" style="padding: 15px 8px 0px 60px;">
+  <% else %>
+    <div class="container" style="padding-top: 15px;">
+  <% end %>
+  
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>

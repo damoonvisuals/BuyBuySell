@@ -1,6 +1,6 @@
 <ul class="nav nav-list bs-docs-sidenav affix">
   <li>
-    <a rel="tooltip" href="#" title="Starred Listings" data-placement="right">
+    <a rel="tooltip" href="<%= root_path %>" title="Starred Listings" data-placement="right">
       <%= image_tag 'sidebar/starred.svg', size: "30x30" %>
     </a>
   </li>
@@ -10,12 +10,12 @@
     </a>
   </li>
   <li>
-    <a data-placement="right" rel="tooltip" href="#" title="Categories">
+    <a data-placement="right" rel="tooltip" href="<%= listings_path %>" title="Categories">
       <%= image_tag 'sidebar/categories_tag.svg', size: "30x30" %>
     </a>
   </li>
   <li>
-    <a data-placement="right" rel="tooltip" href="#" title="Your Listings">
+    <a data-placement="right" rel="tooltip" href="<%= user_path(current_user) %>" title="Profile">
       <%= image_tag 'sidebar/profile.svg', size: "30x30" %>
     </a>
   </li>
