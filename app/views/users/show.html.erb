@@ -6,23 +6,32 @@
     <section>
       <%= render 'shared/user_info' %>
     </section>
+    <% if current_user?(@user) %>
     <section>
       <%= render 'shared/stats' %>
     </section>
+    <section>
+      <%= link_to "Create New Listing", new_listing_path, class: "btn btn-large btn-primary" %>
+    </section>
+    <% else %>
+    <section>
+      <%= link_to "Message #{@user.user_name}", new_conversation_path(email: @user.email), class: "btn btn-large btn-primary" %>
+    </section>
+    <% end %>
+    
+    
   </aside>
 
   <div class="span9">
-    <%= render 'follow_form' if signed_in? %>
     <% if @user.listings.any? %>
-      <h3>My Listings (<%= @user.listings.count %>)</h3>
-      <ol class="listings">
-        <!-- This references partial listings/_listing.html.erb -->
-        <%= render @listings %>
-      </ol>
-      <%= will_paginate @listings %>
+    <h3>Listings (<%= @user.listings.count %>)</h3>
+    <ol class="listings">
+      <!-- This references partial listings/_listing.html.erb -->
+      <%= render @listings %>
+    </ol>
+    <%= will_paginate @listings %>
     <% else %>
-      <h3>No Current Listings</h3>
-      <%= link_to "Create New Listing", create_listing_path, class: "btn btn-large btn-primary" %>
+    <h3>No Current Listings</h3>
     <% end %>
   </div>
 </div>

@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   # attr_accessible are protected from XSS
   attr_accessible :email, :user_name, :password, :password_confirmation
   has_secure_password
+  acts_as_messageable
 
   # dependent: :destroy makes listings destroyed when user destroyed
   has_many :listings, dependent: :destroy
@@ -38,6 +39,18 @@ class User < ActiveRecord::Base
   VALID_PASSWORD_REGEX = /\d/
   validates :password, presence: true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX }
   validates :password_confirmation, presence: true
+
+  def name
+    user_name
+  end
+
+  def mailboxer_email(object)
+    #Check if an email should be sent for that object
+    #if true
+    email
+    #if false
+    #return nil
+  end
 
   def feed
     Listing.from_users_followed_by(self)

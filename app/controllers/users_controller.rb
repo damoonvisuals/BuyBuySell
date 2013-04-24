@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, 
-                only: [:index, :edit, :update, :destroy, :following]
-  before_filter :correct_user,   only: [:edit, :update]
-  before_filter :admin_user,     only: :destroy
+                only: [:index, :edit, :update, :destroy, :following, :messages]
+  before_filter :correct_user,   only: [:edit, :update, :following, :messages]
+  before_filter :admin_user,     only: [:destroy]
 
   def show
     @user = User.find(params[:id])
-    # @microposts = @user.microposts.paginate(page: params[:page])
     @listings = @user.listings.paginate(page: params[:page])
   end
 
@@ -51,11 +50,18 @@ class UsersController < ApplicationController
     end
   end
   
-  def following
-    @title = "Starred"
+  def stars
+    @title = "Stars"
     @user = User.find(params[:id])
     @feed_items = @user.followed_listings.paginate(page: params[:page])
-    render 'show_follow'
+    render 'show_star'
+  end
+
+  def messages
+    @title = "Inbox"
+    @user = User.find(params[:id])
+    @msg_items = @user.mailbox.inbox.paginate(page: params[:page])
+    render 'show_message'
   end
 
   # def followers
@@ -67,20 +73,20 @@ class UsersController < ApplicationController
   
   private
 
-    def signed_in_user
-      #Same as flash[:notice] redirect_to signin_url
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
+    # def signed_in_user
+    #   #Same as flash[:notice] redirect_to signin_url
+    #   unless signed_in?
+    #     store_location
+    #     redirect_to signin_url, notice: "Please sign in."
+    #   end
+    # end
 
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
 
-    def admin_user
-      redirect_to(root_path) unless current_user.admin?
-    end
+    # def admin_user
+    #   redirect_to(root_path) unless current_user.admin?
+    # end
 end

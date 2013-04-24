@@ -10,6 +10,13 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem "twitter-bootstrap-rails"
 
 gem 'jquery-rails', '2.0.2'
+# gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+gem 'mailboxer'
+gem 'simple_form'
+# gem 'private_pub'
+# gem 'faye'
+# gem 'thin'
+
 
 gem 'acts-as-taggable-on'
 gem 'rmagick'

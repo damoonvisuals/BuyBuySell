@@ -18,8 +18,12 @@ class ListingsController < ApplicationController
   end
 
   def index
-    #@listing = Listing.all
-    @listings = Listing.paginate(page: params[:page])
+    #@listings = Listing.all
+    if params[:tag]
+      @listings = Listing.tagged_with(params[:tag]).paginate(page: params[:page])
+    else
+      @listings = Listing.paginate(page: params[:page])
+    end
   end
 
   def edit
@@ -36,8 +40,8 @@ class ListingsController < ApplicationController
   end
 
   private
-    def correct_user
-      @listing = current_user.listings.find_by_id(params[:id])
-      redirect_to root_url if @listing.nil?
-    end
+  def correct_user
+    @listing = current_user.listings.find_by_id(params[:id])
+    redirect_to root_url if @listing.nil?
+  end
 end

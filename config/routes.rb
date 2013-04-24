@@ -1,8 +1,11 @@
 Buybuysell::Application.routes.draw do
-  # Navigates /users/1/following /users/1/followed
+  default_url_options :host => "localhost:3000"
+
+  # Navigates /users/1/starred
   resources :users do
     member do
-      get :following
+      get :stars
+      get :messages
     end
   end
 
@@ -13,11 +16,20 @@ Buybuysell::Application.routes.draw do
     end
   end
 
-  resources :beta_users, only: [:new, :create, :destroy]
+  # resources :messages
+  resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
+  # resources :messages, only: [:create, :destroy]
   resources :listings, only: [:create, :destroy]
   resources :listing_relationships, only: [:create, :destroy]
-  get 'tags/:tag', to: 'static_pages#home', as: :tag
+  get 'tags/:tag', to: 'listings#index', as: :tag
 
   root to: 'static_pages#home'
 
@@ -26,7 +38,8 @@ Buybuysell::Application.routes.draw do
   #Should be invoked using HTTP DELETE Request
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  match '/create_listing', to: 'listings#new'
+  # match '/create_listing', to: 'listings#new'
+  # match '/create_message', to: 'messages#new'
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
