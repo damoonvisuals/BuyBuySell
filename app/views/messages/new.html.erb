@@ -1,0 +1,14 @@
+<% provide(:title, 'Compose New Message') %>
+
+<h1>Compose New Message</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@message) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= render 'fields', f: f %>
+    <div class="btn-group-wrap">
+      <%= f.submit "Send Message", class: "btn btn-large btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

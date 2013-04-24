@@ -1,0 +1,27 @@
+<!-- Runs when /users/1/messages is accessed -->
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= link_to "Compose New Message", :new_conversation, class: "btn btn-large btn-primary" %>
+    </section>
+  </aside>
+  <div class="span9">
+    <% if @user.mailbox.inbox.any? %>
+      <h3>Inbox (<%= @user.mailbox.inbox.count %>)</h3>
+      <ul class="conversations">
+        <!-- This references partial conversations/_conversation.html.erb -->
+        <%= render @msg_items %>
+      </ul>
+      <%= will_paginate @msg_items %>
+    <% else %>
+      <h3>No Messages in Inbox</h3>
+    <% end %>
+  </div>
+</div>

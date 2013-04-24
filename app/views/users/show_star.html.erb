@@ -1,0 +1,17 @@
+<!-- Runs when /users/1/stars is accessed -->
+
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span9">
+    <h3>Starred Listings</h3>
+    <%= render 'shared/feed' %>
+  </div>
+</div>

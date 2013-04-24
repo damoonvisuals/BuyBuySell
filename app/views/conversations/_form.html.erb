@@ -1,0 +1,13 @@
+<%= simple_form_for :conversation, url: :conversations do |f| %>
+
+<%= f.input :recipients, placeholder: "Recipients (separated by commas)", :input_html => { :value => "#{@recip_email}"} %>
+
+<%= f.input :subject, placeholder: "Subject" %>
+
+<%= f.input :body %>
+
+<div class="btn-group-wrap">
+  <%= f.button :submit, "Send Message", class: "btn btn-large btn-primary" %>
+  <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-large btn-danger' %>
+</div>
+<% end %>

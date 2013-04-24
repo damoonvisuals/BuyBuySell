@@ -1,0 +1,8 @@
+<%= simple_form_for :message, url: [:reply, conversation] do |f| %>
+  <%= f.input :subject, :input_html => { :value => "RE: #{conversation.subject}"} %>
+  <%= f.input :body %>
+<div class="btn-group-wrap">
+  <%= f.button :submit, "Reply", class: "btn btn-large btn-primary" %>
+  <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-large btn-danger' %>
+</div>
+<% end %>

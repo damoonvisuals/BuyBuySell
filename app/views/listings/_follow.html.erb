@@ -1,0 +1,5 @@
+<%= form_for(current_user.listing_relationships.build(followed_id: @listing.id),
+             remote: true) do |f| %>
+  <div><%= f.hidden_field :followed_id %></div>
+  <%= f.submit "Star", class: "btn btn-large btn-primary" %>
+<% end %>
