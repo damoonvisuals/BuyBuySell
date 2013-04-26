@@ -1,12 +1,12 @@
 Buybuysell::Application.routes.draw do
-  default_url_options :host => "localhost:3000"
+  # default_url_options :host => "localhost:3000"
 
-  # Navigates /users/1/starred
+  # Navigates /users/1/stars
   resources :users do
-    member do
-      get :stars
-      get :messages
-    end
+    # member do
+    #   get :stars
+    #   get :messages
+    # end
   end
 
   # Navigates /listings/1/followers
@@ -37,9 +37,6 @@ Buybuysell::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   #Should be invoked using HTTP DELETE Request
   match '/signout', to: 'sessions#destroy', via: :delete
-
-  # match '/create_listing', to: 'listings#new'
-  # match '/create_message', to: 'messages#new'
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

@@ -1,6 +1,46 @@
-<h2>Inbox</h2>
-<ul><%= render mailbox.inbox %></ul>
-<h2>Sentbox</h2>
-<ul><%= render mailbox.sentbox %></ul>
-<h2>Trash</h2>
-<ul><%= render mailbox.trash %></ul>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= link_to "Compose New Message", :new_conversation, class: "btn btn-large btn-primary" %>
+    </section>
+  </aside>
+  <div class="span9">
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active"><a href="#inbox" data-toggle="tab">Inbox (<%= mailbox.inbox.count %>)</a></li>
+      <li><a href="#sent_messages" data-toggle="tab">Sent Messages (<%= mailbox.sentbox.count %>)</a></li>
+      <li><a href="#trash" data-toggle="tab">Trash (<%= mailbox.trash.count %>)</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="inbox">
+        <h3>Inbox</h3>
+        <ul class="conversations">
+          <!-- This references partial conversations/_conversation.html.erb -->
+          <%= render mailbox.inbox %>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="sent_messages">
+        <h3>Sent Messages</h3>
+        <ul class="conversations">
+          <!-- This references partial conversations/_conversation.html.erb -->
+          <%= render mailbox.sentbox %>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="trash">
+        <h3>Trash</h3>
+        <ul class="conversations">
+          <!-- This references partial conversations/_conversation.html.erb -->
+          <%= render mailbox.trash %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

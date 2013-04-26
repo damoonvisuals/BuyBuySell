@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "You have successfully signed up for buybuysell.org beta, Congratulations!"
+      flash[:success] = "You have successfully signed up for buybuysell.org, Congratulations!"
       redirect_to @user
     else
       render 'new'
@@ -50,19 +50,21 @@ class UsersController < ApplicationController
     end
   end
   
-  def stars
-    @title = "Stars"
-    @user = User.find(params[:id])
-    @feed_items = @user.followed_listings.paginate(page: params[:page])
-    render 'show_star'
-  end
+  # def stars
+  #   @title = "Stars"
+  #   @user = User.find(params[:id])
+  #   @feed_items = @user.followed_listings.paginate(page: params[:page])
+  #   render 'show_star'
+  # end
 
-  def messages
-    @title = "Inbox"
-    @user = User.find(params[:id])
-    @msg_items = @user.mailbox.inbox.paginate(page: params[:page])
-    render 'show_message'
-  end
+  # def messages
+  #   @title = "Inbox"
+  #   @user = User.find(params[:id])
+  #   @msg_items = @user.mailbox.inbox.paginate(page: params[:page])
+  #   @sent_msg_items = @user.mailbox.sentbox.paginate(page: params[:page])
+  #   @trash_msg_items = @user.mailbox.trash.paginate(page: params[:page])
+  #   render 'show_message'
+  # end
 
   # def followers
   #   @title = "Followers"

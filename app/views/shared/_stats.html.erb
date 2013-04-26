@@ -1,12 +1,12 @@
 <% @user ||= current_user %>
 <div class="stats">
-  <a href="<%= stars_user_path(@user) %>">
+  <a href="<%= root_url %>">
     <strong id="starred" class="stat">
       <%= @user.followed_listings.count %>
     </strong>
     Starred Listings
   </a>
-  <a href="<%= messages_user_path(@user) %>">
+  <a href="<%= conversations_path %>">
     <strong id="messages" class="stat">
       <%= @user.mailbox.inbox.count %>
     </strong>

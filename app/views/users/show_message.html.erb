@@ -13,15 +13,51 @@
     </section>
   </aside>
   <div class="span9">
-    <% if @user.mailbox.inbox.any? %>
-      <h3>Inbox (<%= @user.mailbox.inbox.count %>)</h3>
-      <ul class="conversations">
-        <!-- This references partial conversations/_conversation.html.erb -->
-        <%= render @msg_items %>
-      </ul>
-      <%= will_paginate @msg_items %>
-    <% else %>
-      <h3>No Messages in Inbox</h3>
-    <% end %>
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active"><a href="#inbox" data-toggle="tab">Inbox</a></li>
+      <li><a href="#sent_messages" data-toggle="tab">Sent Messages</a></li>
+      <li><a href="#trash" data-toggle="tab">Trash</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="inbox">
+        <% if @user.mailbox.inbox.any? %>
+        <h3>Inbox (<%= @user.mailbox.inbox.count %>)</h3>
+        <ul class="conversations">
+          <!-- This references partial conversations/_conversation.html.erb -->
+          <%= render @msg_items %>
+        </ul>
+        <%= will_paginate @msg_items %>
+        <% else %>
+        <h3>No Messages in Inbox</h3>
+        <% end %>
+      </div>
+
+      <div class="tab-pane" id="sent_messages">
+        <% if @user.mailbox.sentbox.any? %>
+        <h3>Sent Messages (<%= @user.mailbox.sentbox.count %>)</h3>
+        <ul class="conversations">
+          <!-- This references partial conversations/_conversation.html.erb -->
+          <%= render @sent_msg_items %>
+        </ul>
+        <%= will_paginate @sent_msg_items %>
+        <% else %>
+        <h3>No Messages in Sentbox</h3>
+        <% end %>
+      </div>
+
+      <div class="tab-pane" id="trash">
+        <% if @user.mailbox.trash.any? %>
+        <h3>Trash (<%= @user.mailbox.trash.count %>)</h3>
+        <ul class="conversations">
+          <!-- This references partial conversations/_conversation.html.erb -->
+          <%= render @trash_msg_items %>
+        </ul>
+        <%= will_paginate @trash_msg_items %>
+        <% else %>
+        <h3>No Messages in Trash</h3>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
