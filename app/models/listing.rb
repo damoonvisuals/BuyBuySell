@@ -19,7 +19,7 @@ class Listing < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 300 }
   validates :user_id, presence: true
   validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
-  validates :tag_list, presence: true, length: { maximum: 5 }
+  validates :tag_list, presence: true
 
   default_scope order: 'listings.created_at DESC'
 
