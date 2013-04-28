@@ -1,4 +1,13 @@
 <li>
+  <span class="listing-title">
+    <%= link_to "#{listing.title} - $#{listing.price}", listing %>
+  </span>
+  
+  <span class="user">
+    <%= link_to gravatar_for(listing.user), listing.user %>
+    <%= link_to listing.user.user_name, listing.user %>
+  </span>
+
   <span class="image_placeholder">
     <%= image_tag listing.image_url(:thumb).to_s %>
   </span>
@@ -8,11 +17,11 @@
     Posted <%= time_ago_in_words(listing.created_at) %> ago.
   </span>
   <span class="starred">
-    Stars: <%= listing.followers.count + 1%>
+    <a href="<%= followers_listing_path(listing) %>">Stars: <%= listing.followers.count + 1%></a>
   </span>
   <% if current_user?(listing.user) %>
-    <%= link_to "delete", listing, method: :delete,
-    data: { confirm: "You sure?" },
-    title: listing.description %>
+  <%= link_to "delete", listing, method: :delete,
+  data: { confirm: "Delete your listing?" },
+  title: listing.description %>
   <% end %>
 </li>

@@ -1,6 +1,11 @@
 class ListingsController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :edit, :update, :create, :destroy]
-  before_filter :correct_user, only: [:edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:new, :edit, :update, :create, :destroy, :followers]
+  before_filter :correct_user, only: [:edit, :update, :destroy, :followers]
+  before_filter :admin_user, only: [:destroy]
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
 
   def new
     @listing = Listing.new
@@ -12,8 +17,7 @@ class ListingsController < ApplicationController
       flash[:success] = "Your listing has been successfully created!"
       redirect_to root_url
     else
-      @feed_items = []
-      render 'static_pages/home'
+      render 'new'
     end
   end
 
@@ -37,6 +41,13 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
     redirect_to root_url
+  end
+
+  def followers
+    @title = "Followers"
+    @listing = Listing.find(params[:id])
+    @followers = @listing.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
 
   private

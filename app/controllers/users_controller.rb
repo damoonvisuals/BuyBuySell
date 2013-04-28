@@ -65,13 +65,6 @@ class UsersController < ApplicationController
   #   @trash_msg_items = @user.mailbox.trash.paginate(page: params[:page])
   #   render 'show_message'
   # end
-
-  # def followers
-  #   @title = "Followers"
-  #   @user = User.find(params[:id])
-  #   @users = @user.followers.paginate(page: params[:page])
-  #   render 'show_follow'
-  # end
   
   private
 

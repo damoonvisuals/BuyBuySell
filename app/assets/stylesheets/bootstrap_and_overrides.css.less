@@ -32,6 +32,7 @@
 // @linkColor: #ff0000;
 
 @liHighlightColor: #ff3f03;
+@liHighlightGradient: #922702;
 
 //Quicksand Fonts
 @font-face {
@@ -53,6 +54,11 @@
   border-radius: @radius;
 }
 
+//Gradient Compatibility
+.background-gradient(@c1: #ff3f03; @c2: #922702) {
+    
+}
+
 //Box Shadow Compatibility
 .box-shadow (@x: 0; @y: 0; @blur: 1px; @color: #000) {
   box-shadow: @arguments;
@@ -63,7 +69,7 @@
 
 //Sidebar Options
 .bs-docs-sidenav {
-    background-color: #e7e7e7;
+    background-color: @navbarBackground;
     border: 1px solid rgba(0, 0, 0, 0.15);
     .rounded-corners(4px);
     li {
@@ -329,9 +335,14 @@ aside {
         }
     }
 }
-.content {
+.content, .user  {
     display: block;
 }
+.listing-title {
+    display: block;
+    font-size: 1.5em;
+}
+
 .center {
     text-align: center;
     h1 {

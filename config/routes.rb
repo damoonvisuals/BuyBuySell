@@ -31,6 +31,7 @@ Buybuysell::Application.routes.draw do
   resources :listing_relationships, only: [:create, :destroy]
   get 'tags/:tag', to: 'listings#index', as: :tag
 
+
   root to: 'static_pages#home'
 
   match '/signup',  to: 'users#new'

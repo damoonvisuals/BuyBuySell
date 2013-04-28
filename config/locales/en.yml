@@ -14,3 +14,7 @@ en:
               invalid: "can only contain letters, digits, underscores, and hyphens"
             password:
               invalid: "must contain a capital letter and a number"
+  # simple_form:
+  #   hints:
+  #     defaults:
+  #       price: "Select a price greater 1, please"

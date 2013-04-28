@@ -6,17 +6,13 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 
-# gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
 
 gem 'jquery-rails', '2.0.2'
-# gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
 gem 'mailboxer'
 gem 'simple_form'
-# gem 'private_pub'
-# gem 'faye'
-# gem 'thin'
 
+gem 'acts_as_commentable', '3.0.1'
 
 gem 'acts-as-taggable-on'
 gem 'rmagick'
@@ -54,3 +50,5 @@ end
 group :production do
   gem 'pg', '0.15.0'
 end
+
+gem "kaminari"

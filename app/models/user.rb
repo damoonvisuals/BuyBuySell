@@ -56,16 +56,16 @@ class User < ActiveRecord::Base
     Listing.from_users_followed_by(self)
   end
 
-  def following?(lsting)
-    self.listing_relationships.find_by_followed_id(lsting.id)
+  def following?(listing)
+    self.listing_relationships.find_by_followed_id(listing.id)
   end
 
-  def follow!(lsting)
-    self.listing_relationships.create!(followed_id: lsting.id)
+  def follow!(listing)
+    self.listing_relationships.create!(followed_id: listing.id)
   end
 
-  def unfollow!(lsting)
-    self.listing_relationships.find_by_followed_id(lsting.id).destroy
+  def unfollow!(listing)
+    self.listing_relationships.find_by_followed_id(listing.id).destroy
   end
 
   # Makes method private, can't be accessed from outside

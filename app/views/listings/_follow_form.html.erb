@@ -1,4 +1,4 @@
-<% unless current_user?(@user) %>
+<% unless current_user?(@listing.user) %>
   <div id="follow_form">
   <% if current_user.following?(@listing) %>
     <%= render 'unfollow' %>

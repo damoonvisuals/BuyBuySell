@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  attr_accessible :description, :image, :tag_list
+  attr_accessible :title, :description, :image, :tag_list, :price
   belongs_to :user
 
   # has_many :listing_relationships, foreign_key: "followed_id", dependent: :destroy
@@ -10,11 +10,16 @@ class Listing < ActiveRecord::Base
                                  dependent:   :destroy
   has_many :followers, through: :reverse_listing_relationships, source: :follower
 
+
   mount_uploader :image, ImageUploader
   acts_as_taggable
+  acts_as_commentable
 
+  validates :title, presence: true, length: { maximum: 70 }
   validates :description, presence: true, length: { maximum: 300 }
   validates :user_id, presence: true
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
+  validates :tag_list, presence: true
 
   default_scope order: 'listings.created_at DESC'
 
