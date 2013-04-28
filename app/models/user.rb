@@ -60,11 +60,11 @@ class User < ActiveRecord::Base
     self.listing_relationships.find_by_followed_id(listing.id)
   end
 
-  def follow!(listing)
+  def star!(listing)
     self.listing_relationships.create!(followed_id: listing.id)
   end
 
-  def unfollow!(listing)
+  def unstar!(listing)
     self.listing_relationships.find_by_followed_id(listing.id).destroy
   end
 

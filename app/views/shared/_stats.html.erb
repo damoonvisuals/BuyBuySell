@@ -2,7 +2,7 @@
 <div class="stats">
   <a href="<%= root_url %>">
     <strong id="starred" class="stat">
-      <%= @user.followed_listings.count + 1 %>
+      <%= @user.followed_listings.count + @user.listings.count %>
     </strong>
     Starred Listings
   </a>

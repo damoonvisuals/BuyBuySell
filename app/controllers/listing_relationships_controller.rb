@@ -3,7 +3,7 @@ class ListingRelationshipsController < ApplicationController
 
   def create
     @listing = Listing.find(params[:listing_relationship][:followed_id])
-    current_user.follow!(@listing)
+    current_user.star!(@listing)
     respond_to do |format|
       format.html { redirect_to @listing }
       format.js
@@ -12,7 +12,7 @@ class ListingRelationshipsController < ApplicationController
 
   def destroy
     @listing = ListingRelationship.find(params[:id]).followed
-    current_user.unfollow!(@listing)
+    current_user.unstar!(@listing)
     respond_to do |format|
       format.html { redirect_to @listing }
       format.js

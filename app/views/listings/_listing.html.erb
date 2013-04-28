@@ -17,11 +17,11 @@
     Posted <%= time_ago_in_words(listing.created_at) %> ago.
   </span>
   <span class="starred">
-    <a href="<%= followers_listing_path(listing) %>">Stars: <%= listing.followers.count + 1%></a>
+    <a href="<%= followers_listing_path(listing) %>"><div id="followers">Stars: <%= listing.followers.count + 1%></div></a>
   </span>
   <% if current_user?(listing.user) %>
   <%= link_to "delete", listing, method: :delete,
   data: { confirm: "Delete your listing?" },
-  title: listing.description %>
+  title: listing.title %>
   <% end %>
 </li>

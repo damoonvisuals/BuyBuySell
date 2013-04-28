@@ -1,19 +1,22 @@
 <!-- Runs when /listings/1/ is accessed -->
-
 <% provide(:title, @listing.title) %>
-<% if signed_in? %>
+<% right_user = current_user?(@listing.user) %>
+
+<% if right_user %>
 <div class="row">
   <aside class="span9">
     <% end %>
-    <h3><%= @listing.title %></h3>
+    <h2><%= @listing.title %></h2>
     <section>
       <%= render @listing %>
     </section>
+    <% if not right_user %>
     <section>
-      <%= render 'follow_form' if signed_in? %>
+      <%= render 'follow_form' %>
       <%= link_to "Message #{@listing.user.user_name}", new_conversation_path(email: @listing.user.email), class: "btn btn-large btn-primary" %>
     </section>
-  <% if signed_in? %>
+    <% end %>
+    <% if right_user %>
   </aside>
   <div class="span3">
     <h3>Followers (<%= @listing.followers.count + 1 %>)</h3>
@@ -22,3 +25,18 @@
   </div>
 </div>
 <% end %>
+<hr />
+<h2>Comments</h2>
+<%= render @comments %>
+<%= will_paginate(@comments) %>
+
+
+<%= simple_form_for [@listing, @comment] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.input :comment %>
+  <div class="btn-group-wrap">
+  <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+  <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-large btn-danger' %>
+</div>
+<% end %>
+

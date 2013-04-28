@@ -10,13 +10,16 @@ Buybuysell::Application.routes.draw do
   end
 
   # Navigates /listings/1/followers
-  resources :listings do
+  resources :listings, only: [:index, :new, :show, :create, :destroy] do
     member do
       get :followers
+      # get :comments
     end
+    resources :comments
   end
+  # match "/listings/add_new_comment" => "listings#add_new_comment", :as => "add_new_comment_to_listings", :via => [:post]
 
-  # resources :messages
+
   resources :conversations, only: [:index, :show, :new, :create] do
     member do
       post :reply
@@ -27,7 +30,7 @@ Buybuysell::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   # resources :messages, only: [:create, :destroy]
-  resources :listings, only: [:create, :destroy]
+  # resources :listings, only: [:create, :destroy]
   resources :listing_relationships, only: [:create, :destroy]
   get 'tags/:tag', to: 'listings#index', as: :tag
 

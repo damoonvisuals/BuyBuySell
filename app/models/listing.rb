@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  attr_accessible :title, :description, :image, :tag_list, :price
+  attr_accessible :title, :description, :image, :tag_list, :price, :followers
   belongs_to :user
 
   # has_many :listing_relationships, foreign_key: "followed_id", dependent: :destroy
@@ -19,7 +19,7 @@ class Listing < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 300 }
   validates :user_id, presence: true
   validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
-  validates :tag_list, presence: true
+  validates :tag_list, presence: true, length: { maximum: 5 }
 
   default_scope order: 'listings.created_at DESC'
 

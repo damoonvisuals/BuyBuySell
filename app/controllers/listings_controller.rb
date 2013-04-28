@@ -1,10 +1,11 @@
 class ListingsController < ApplicationController
   before_filter :signed_in_user, only: [:new, :edit, :update, :create, :destroy, :followers]
   before_filter :correct_user, only: [:edit, :update, :destroy, :followers]
-  before_filter :admin_user, only: [:destroy]
 
   def show
     @listing = Listing.find(params[:id])
+    @comments = @listing.comments.paginate(page: params[:page])
+    @comment = Comment.new
   end
 
   def new
@@ -49,6 +50,19 @@ class ListingsController < ApplicationController
     @followers = @listing.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+
+  # def add_new_comment
+  #   @listing = Listing.find(params[:id])
+  #   @listing.comments << Listing.new(params[:comment])
+  #   redirect_to :action => :show, :id => @listing
+  # end
+
+  # def comments
+  #   @title = "Comments"
+  #   @listing = Listing.find(params[:id])
+  #   @comments = @listing.comments.paginate(page: params[:page])
+  #   render 'show_comment'
+  # end
 
   private
   def correct_user
