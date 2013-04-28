@@ -1,0 +1,24 @@
+<!-- Runs when /listings/1/ is accessed -->
+
+<% provide(:title, @listing.title) %>
+<% if signed_in? %>
+<div class="row">
+  <aside class="span9">
+    <% end %>
+    <h3><%= @listing.title %></h3>
+    <section>
+      <%= render @listing %>
+    </section>
+    <section>
+      <%= render 'follow_form' if signed_in? %>
+      <%= link_to "Message #{@listing.user.user_name}", new_conversation_path(email: @listing.user.email), class: "btn btn-large btn-primary" %>
+    </section>
+  <% if signed_in? %>
+  </aside>
+  <div class="span3">
+    <h3>Followers (<%= @listing.followers.count + 1 %>)</h3>
+    <%= render @listing.user %>
+    <%= render @listing.followers %>
+  </div>
+</div>
+<% end %>

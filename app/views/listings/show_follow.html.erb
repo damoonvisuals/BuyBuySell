@@ -1,0 +1,6 @@
+<!-- Runs when /listings/1/followers is accessed -->
+
+<% provide(:title, @title) %>
+<h3>Followers (<%= @listing.followers.count + 1 %>)</h3>
+<%= render @listing.user %>
+<%= render @followers %>
