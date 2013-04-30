@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
       if registered_user
         return registered_user
       else
-        user = User.create(user_name:auth.extra.raw_info.name.gsub!(/\s/, ''),
+        user = User.create(user_name:auth.extra.raw_info.username,
           provider:auth.provider,
           uid:auth.uid,
           email:auth.info.email)

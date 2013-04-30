@@ -7,6 +7,7 @@ require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require 'rack/no-www'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -70,6 +71,10 @@ module Buybuysell
 
     # Adding custom font assets
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    if Rails.env.production?
+      config.middleware.insert_before Rack::Lock, Rack::NoWWW
+    end
 
   end
 end

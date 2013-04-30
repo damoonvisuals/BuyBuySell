@@ -57,4 +57,5 @@ group :production do
   gem 'pg', '0.15.0'
 end
 
+gem 'rack-no-www', '0.0.2'
 gem "kaminari"
