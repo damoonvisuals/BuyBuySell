@@ -220,7 +220,7 @@ Devise.setup do |config|
   config.omniauth :facebook, "127357367458872", "7571e0f9225886f3b2296f7a7ecd0614"
   require "omniauth-google-oauth2"
   # config.omniauth :google_oauth2, "997425525416", "TVSvck1x5Af-J2xUpZwyJWrr", { access_type: "offline", approval_prompt: "" }
-  config.omniauth :google_oauth2, "997425525416", "TVSvck1x5Af-J2xUpZwyJWrr"
+  config.omniauth :google_oauth2, "997425525416", "TVSvck1x5Af-J2xUpZwyJWrr", { access_type: 'online', approval_prompt: ''}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
