@@ -13,7 +13,7 @@ en:
             user_name:
               invalid: "can only contain letters, digits, underscores, and hyphens"
             password:
-              invalid: "must contain a capital letter and a number"
+              invalid: "must contain a number"
   # simple_form:
   #   hints:
   #     defaults:

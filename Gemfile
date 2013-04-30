@@ -1,12 +1,18 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'bcrypt-ruby', '3.0.1'
+# gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 
-gem "twitter-bootstrap-rails"
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+# gem 'omniauth'
+
+gem 'twitter-bootstrap-rails'
 
 gem 'jquery-rails', '2.0.2'
 gem 'mailboxer'
@@ -36,7 +42,7 @@ group :assets do
   
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem 'therubyracer', :platforms => :ruby
-  gem 'angularjs-rails'
+  # gem 'angularjs-rails'
 end
 
 group :test do

@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :new, :edit, :update, :create, :destroy]
+  before_filter :authenticate_user!, only: [:index, :new, :edit, :update, :create, :destroy]
   before_filter :correct_user, only: [:edit, :update, :destroy]
   # before_filter :admin_user, only: :index
 

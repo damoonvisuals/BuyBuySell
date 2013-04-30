@@ -1,4 +1,6 @@
 Buybuysell::Application.routes.draw do
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   # default_url_options :host => "localhost:3000"
 
   # Navigates /users/1/stars
@@ -28,7 +30,7 @@ Buybuysell::Application.routes.draw do
     end
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :sessions, only: [:new, :create, :destroy]
   # resources :messages, only: [:create, :destroy]
   # resources :listings, only: [:create, :destroy]
   resources :listing_relationships, only: [:create, :destroy]
@@ -37,10 +39,17 @@ Buybuysell::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new'
+  # match '/signup',  to: 'users#new'
+  # match '/signin',  to: 'sessions#new'
   #Should be invoked using HTTP DELETE Request
-  match '/signout', to: 'sessions#destroy', via: :delete
+  # match '/signout', to: 'sessions#destroy', via: :delete
+
+  devise_scope :user do
+    get "signup", to: 'devise/registrations#new'
+    get "signin", to: "devise/sessions#new"
+    delete "signout", to: 'devise/sessions#destroy'
+    # put "/confirm" => "confirmations#confirm"
+  end
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
