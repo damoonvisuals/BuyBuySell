@@ -72,9 +72,9 @@ module Buybuysell
     # Adding custom font assets
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
-    if Rails.env.production?
-      config.middleware.insert_before Rack::Lock, Rack::NoWWW
-    end
+    # if Rails.env.production?
+    #   config.middleware.insert_before Rack::Lock, Rack::NoWWW
+    # end
 
   end
 end
