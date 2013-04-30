@@ -85,23 +85,23 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+  # def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
 
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    if user
-      return user
-    else
-      registered_user = User.where(:email => auth.uid + "@twitter.com").first
-      if registered_user
-        return registered_user
-      else
-        user = User.create(user_name:auth.info.nickname,
-          provider:auth.provider,
-          uid:auth.uid,
-          email:auth.uid+"@twitter.com")
-      end
-    end
-  end
+  #   user = User.where(:provider => auth.provider, :uid => auth.uid).first
+  #   if user
+  #     return user
+  #   else
+  #     registered_user = User.where(:email => auth.uid + "@twitter.com").first
+  #     if registered_user
+  #       return registered_user
+  #     else
+  #       user = User.create(user_name:auth.info.nickname,
+  #         provider:auth.provider,
+  #         uid:auth.uid,
+  #         email:auth.uid+"@twitter.com")
+  #     end
+  #   end
+  # end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
       if registered_user
         return registered_user
       else
-        user = User.create(user_name:auth.extra.raw_info.name.gsub(/\s/, ''),
+        user = User.create(user_name:auth.extra.raw_info.name.gsub!(/\s/, ''),
           provider:auth.provider,
           uid:auth.uid,
           email:auth.info.email)
@@ -136,6 +136,15 @@ class User < ActiveRecord::Base
           email: data["email"],
           uid: access_token.uid)
       end
+    end
+  end
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.user_name = auth.info.nickname
+      user.email = auth.uid + "@twitter.com"
     end
   end
 
