@@ -47,7 +47,15 @@
 			"file": "config/application.rb",
 			"settings":
 			{
-				"buffer_size": 3347,
+				"buffer_size": 3349,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 1222,
 				"line_ending": "Unix"
 			}
 		}
@@ -294,7 +302,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -330,15 +338,15 @@
 					"file": "config/application.rb",
 					"settings":
 					{
-						"buffer_size": 3347,
+						"buffer_size": 3349,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3037,
-								3037
+								3130,
+								3130
 							]
 						],
 						"settings":
@@ -348,7 +356,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 952.0,
+						"translation.y": 816.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 1222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1207,
+								1207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -401,6 +437,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"gemfile",
+				"Gemfile"
+			],
 			[
 				"applicat",
 				"config/application.rb"
@@ -460,10 +500,6 @@
 			[
 				"devi",
 				"config/initializers/devise.rb"
-			],
-			[
-				"gemfile",
-				"Gemfile"
 			],
 			[
 				"sessionsnew",
