@@ -19,7 +19,7 @@ gem 'mailboxer'
 gem 'simple_form'
 
 gem 'acts_as_commentable', '3.0.1'
-
+gem "acts_as_rateable", :git => "git://github.com/anton-zaytsev/acts_as_rateable.git"
 gem 'acts-as-taggable-on'
 gem 'rmagick'
 gem 'carrierwave'

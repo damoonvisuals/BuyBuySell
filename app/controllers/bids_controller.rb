@@ -7,10 +7,11 @@ class BidsController < ApplicationController
 
   def create
     @bid = @biddable.bids.create(params[:bid]) 
+    @bid.user_id = current_user.id
     if @bid.save
       redirect_to @biddable
     else 
-      flash[:error] = "You fucked up"
+      flash[:error] = "Please enter a valid bid."
       redirect_to @biddable
     end
   end

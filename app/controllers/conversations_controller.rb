@@ -6,12 +6,12 @@ class ConversationsController < ApplicationController
   helper_method :mailbox, :conversation
 
   def new
-    @recip_email = params[:email]
+    @recip_username = params[:user_name]
   end
 
   def create
-    recipient_emails = conversation_params(:recipients).split(',')
-    recipients = User.where(email: recipient_emails).all
+    recipient_usernames = conversation_params(:recipients).split(',')
+    recipients = User.where(user_name: recipient_usernames).all
 
     conversation = current_user.
       send_message(recipients, *conversation_params(:body, :subject)).conversation

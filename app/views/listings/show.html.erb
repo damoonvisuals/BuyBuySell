@@ -30,7 +30,6 @@
     <%= simple_form_for [@listing, @bid] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.input :amount %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
       <div class="btn-group-wrap">
         <%= f.submit "Place New Bid", class: "btn btn-large btn-primary" %>
       </div>

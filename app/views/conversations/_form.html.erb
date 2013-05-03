@@ -1,6 +1,6 @@
 <%= simple_form_for :conversation, url: :conversations do |f| %>
 
-<%= f.input :recipients, placeholder: "Recipients (separated by commas)", :input_html => { :value => "#{@recip_email}"} %>
+<%= f.input :recipients, placeholder: "Recipients (separated by commas)", :input_html => { :value => "#{@recip_username}"} %>
 
 <%= f.input :subject, placeholder: "Subject" %>
 

@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   # attr_accessible :email, :user_name, :password, :password_confirmation
   # has_secure_password
   acts_as_messageable
+  acts_as_rateable
 
   # dependent: :destroy makes listings destroyed when user destroyed
   has_many :listings, dependent: :destroy

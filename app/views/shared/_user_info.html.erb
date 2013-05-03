@@ -6,7 +6,12 @@
   <%= @user.user_name %>
 </h1>
 <span>
-  <%= link_to "view my profile", @user %>
+  Rating: 
+  <% if @user.ratings.any? %>
+    <%= @user.average_rating_round %>
+  <% else %>
+    <i>unrated</i>
+  <% end %>
 </span>
 <span>
   <%= pluralize(@user.listings.count, "listing") %>

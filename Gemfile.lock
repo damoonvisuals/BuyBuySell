@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/anton-zaytsev/acts_as_rateable.git
+  revision: 01066eceb2d16e35be437b7392cc3375f1f377f7
+  specs:
+    acts_as_rateable (3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -240,6 +246,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable (= 3.0.1)
+  acts_as_rateable!
   annotate (= 2.5.0)
   bootstrap-will_paginate (= 0.0.6)
   capybara (= 1.1.2)
