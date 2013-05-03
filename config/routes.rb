@@ -18,8 +18,8 @@ Buybuysell::Application.routes.draw do
       # get :comments
     end
     resources :comments
+    resources :bids, :defaults => { :biddable => 'listing' }
   end
-  # match "/listings/add_new_comment" => "listings#add_new_comment", :as => "add_new_comment_to_listings", :via => [:post]
 
 
   resources :conversations, only: [:index, :show, :new, :create] do

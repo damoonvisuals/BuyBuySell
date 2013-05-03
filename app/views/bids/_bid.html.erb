@@ -1,0 +1,9 @@
+<p>
+  $<%= bid.amount %>
+  <% if bid.user.blank? %>
+  anonymous
+  <% else %>
+  <%= link_to bid.user.user_name, bid.user %>
+  Last bid <%= time_ago_in_words(bid.created_at)%> ago
+  <% end %>
+</p>

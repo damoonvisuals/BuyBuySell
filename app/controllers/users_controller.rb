@@ -9,9 +9,6 @@ class UsersController < ApplicationController
     @listings = @user.listings.paginate(page: params[:page])
   end
 
-  def new
-    @user = User.new
-  end
 
   def create
     @user = User.new(params[:user])

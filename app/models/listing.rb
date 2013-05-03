@@ -10,6 +10,7 @@ class Listing < ActiveRecord::Base
                                  dependent:   :destroy
   has_many :followers, through: :reverse_listing_relationships, source: :follower
 
+  has_many :bids, as: :biddable
 
   mount_uploader :image, ImageUploader
   acts_as_taggable

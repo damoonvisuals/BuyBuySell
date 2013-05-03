@@ -1,3 +1,8 @@
 <p>
   <%= comment.comment %>
+  <% if not comment.user.blank? %>
+    <%= comment.user.user_name %>
+  <% else %>
+    anonymous
+  <% end %>
 </p>

@@ -14,6 +14,10 @@ en:
               invalid: "can only contain letters, digits, underscores, and hyphens"
             password:
               invalid: "must contain a number"
+        bid:
+          attributes:
+            amount:
+               only_integer: "must be a number"
   # simple_form:
   #   hints:
   #     defaults:

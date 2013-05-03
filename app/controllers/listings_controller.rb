@@ -5,6 +5,10 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @comments = @listing.comments.paginate(page: params[:page])
+    @bids = @listing.bids
+    if signed_in?
+      @bid = Bid.new
+    end
     @comment = Comment.new
   end
 

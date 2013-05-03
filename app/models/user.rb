@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
 
   has_many :listing_relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_listings, through: :listing_relationships, source: :followed
+
+  has_many :bids
   # This is code for followers/followed for users
   # has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   # has_many :followed_users, through: :relationships, source: :followed

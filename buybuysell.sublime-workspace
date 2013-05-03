@@ -47,7 +47,7 @@
 			"file": "config/application.rb",
 			"settings":
 			{
-				"buffer_size": 3349,
+				"buffer_size": 3341,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,7 +55,7 @@
 			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 1222,
+				"buffer_size": 1220,
 				"line_ending": "Unix"
 			}
 		}
@@ -302,7 +302,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -338,15 +338,15 @@
 					"file": "config/application.rb",
 					"settings":
 					{
-						"buffer_size": 3349,
+						"buffer_size": 3341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3130,
-								3130
+								3231,
+								3231
 							]
 						],
 						"settings":
@@ -356,7 +356,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 816.0,
+						"translation.y": 1020.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -366,15 +366,15 @@
 					"file": "Gemfile",
 					"settings":
 					{
-						"buffer_size": 1222,
+						"buffer_size": 1220,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1207,
-								1207
+								1041,
+								1041
 							]
 						],
 						"settings":
@@ -437,6 +437,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"applica",
+				"config/application.rb"
+			],
 			[
 				"gemfile",
 				"Gemfile"
@@ -516,10 +520,6 @@
 			[
 				"boot",
 				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
-			],
-			[
-				"applica",
-				"app/views/layouts/application.html.erb"
 			],
 			[
 				"produ",

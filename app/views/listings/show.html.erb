@@ -2,29 +2,43 @@
 <% provide(:title, @listing.title) %>
 <% right_user = current_user?(@listing.user) %>
 
-<% if right_user %>
 <div class="row">
   <aside class="span9">
-    <% end %>
     <h2><%= @listing.title %></h2>
     <section>
       <%= render @listing %>
     </section>
-    <% if not right_user %>
+    <% if not right_user and signed_in? %>
     <section>
       <%= render 'follow_form' %>
       <%= link_to "Message #{@listing.user.user_name}", new_conversation_path(email: @listing.user.email), class: "btn btn-large btn-primary" %>
     </section>
     <% end %>
-    <% if right_user %>
   </aside>
+  <% if right_user %>
   <div class="span3">
     <h3>Followers (<%= @listing.followers.count + 1 %>)</h3>
     <%= render @listing.user %>
     <%= render @listing.followers %>
   </div>
-</div>
 <% end %>
+  <% if signed_in? %>
+  <div class="span3">
+    <h3>Bids</h3>
+    <%= render @bids %>
+    <% if not right_user %>
+    <%= simple_form_for [@listing, @bid] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.input :amount %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <div class="btn-group-wrap">
+        <%= f.submit "Place New Bid", class: "btn btn-large btn-primary" %>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
 <hr />
 <h2>Comments</h2>
 <%= render @comments %>
@@ -35,8 +49,8 @@
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.input :comment %>
   <div class="btn-group-wrap">
-  <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
-  <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-large btn-danger' %>
-</div>
+    <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+    <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-large btn-danger' %>
+  </div>
 <% end %>
 
