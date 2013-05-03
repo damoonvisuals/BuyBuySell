@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
   before_save { |user| user.user_name = user_name.downcase }
-  before_save :create_remember_token
+  # before_save :create_remember_token
 
   VALID_USER_NAME_REGEX = /^[a-z0-9_-]+$/i
   validates :user_name, presence: true, length: {minimum:3, maximum: 15}, uniqueness: {case_sensitive: false}, format: { with: VALID_USER_NAME_REGEX}
@@ -186,8 +186,8 @@ def update_with_password(params, *options)
 end
 
   # Makes method private, can't be accessed from outside
-  private
-  def create_remember_token
-    self.remember_token = SecureRandom.urlsafe_base64
-  end
+  # private
+  # def create_remember_token
+  #   self.remember_token = SecureRandom.urlsafe_base64
+  # end
 end
