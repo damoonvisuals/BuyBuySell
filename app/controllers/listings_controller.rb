@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
     if params[:tag]
       @listings = Listing.tagged_with(params[:tag]).paginate(page: params[:page])
     else
-      @listings = Listing.paginate(page: params[:page])
+      @listings = Listing.text_search(params[:query]).paginate(page: params[:page])
     end
   end
 

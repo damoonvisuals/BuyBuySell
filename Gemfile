@@ -24,8 +24,12 @@ gem 'acts-as-taggable-on'
 gem 'rmagick'
 gem 'carrierwave'
 
+gem 'pg_search'
+
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
+  # gem 'sqlite3', '1.3.5'
+  gem 'pg', '0.15.0'
+  # gem 'taps'
   gem 'rspec-rails', '2.11.0'
 end
 

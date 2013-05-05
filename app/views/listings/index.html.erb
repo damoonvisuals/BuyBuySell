@@ -1,14 +1,6 @@
 <% provide(:title, 'All listings') %>
 <h1>All Listings</h1>
 
-<div id="tag_cloud">
-  <% tag_cloud @listings.tag_counts, %w[s m l] do |tag, css_class| %>
-  <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>
-
-<%= will_paginate %>
-
 <ul class="listings">
   <%= render @listings %>
 </ul>

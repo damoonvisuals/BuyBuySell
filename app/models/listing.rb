@@ -20,9 +20,22 @@ class Listing < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 300 }
   validates :user_id, presence: true
   validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
-  validates :tag_list, presence: true
 
   default_scope order: 'listings.created_at DESC'
+
+
+  include PgSearch
+  pg_search_scope :search, against: [:title],
+    using: {tsearch: {dictionary: "english"}},
+    associated_against: {tags: [:name]}
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      scoped
+    end
+  end
 
   # Returns listings from the users being followed by the given user.
   # SELECT * FROM listings WHERE user_id IN (SELECT followed_id FROM listing_relationships WHERE follower_id = 1) R user_id = 1

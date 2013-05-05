@@ -2,9 +2,9 @@
   <div class="navbar-inner" style="min-width:640px;">
     <div class="container" style="margin-left:0px; margin-right:0px; width:100%;">
       <%= link_to "buybuysell.org", root_path, id: "logo" %>
-        <form class="navbar-search">
-          <input type="text" class="search-query" placeholder="Search for Anything...">
-        </form>
+      <%= form_tag listings_path, method: :get, class: "navbar-search" do %>
+      <%= text_field_tag :query, params[:query], class: "search-query", placeholder: "Search for anything.." %>
+      <% end %>
       <ul class="nav pull-right">
         <% if signed_in? %>
         <li id="fat-menu" class="dropdown">

@@ -11,33 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503024600) do
+ActiveRecord::Schema.define(:version => 20130505203904) do
 
   create_table "bids", :force => true do |t|
     t.integer  "amount"
     t.integer  "biddable_id"
     t.string   "biddable_type"
+    t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "user_id"
   end
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "categorizations", :force => true do |t|
-    t.integer  "listing_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "categorizations", ["category_id"], :name => "index_categorizations_on_category_id"
-  add_index "categorizations", ["listing_id", "category_id"], :name => "index_categorizations_on_listing_id_and_category_id", :unique => true
-  add_index "categorizations", ["listing_id"], :name => "index_categorizations_on_listing_id"
+  add_index "bids", ["biddable_id"], :name => "index_bids_on_biddable_id"
+  add_index "bids", ["biddable_type"], :name => "index_bids_on_biddable_type"
+  add_index "bids", ["user_id"], :name => "index_bids_on_user_id"
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -80,19 +67,8 @@ ActiveRecord::Schema.define(:version => 20130503024600) do
     t.integer  "price"
   end
 
+  add_index "listings", ["title"], :name => "index_listings_on_title"
   add_index "listings", ["user_id", "created_at"], :name => "index_listings_on_user_id_and_created_at"
-
-  create_table "messages", :force => true do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.boolean  "sender_deleted",    :default => false
-    t.boolean  "recipient_deleted", :default => false
-    t.string   "subject"
-    t.text     "body"
-    t.datetime "read_at"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
-  end
 
   create_table "notifications", :force => true do |t|
     t.string   "type"
@@ -168,8 +144,6 @@ ActiveRecord::Schema.define(:version => 20130503024600) do
     t.string   "email"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
     t.boolean  "admin",                  :default => false
     t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
@@ -185,7 +159,10 @@ ActiveRecord::Schema.define(:version => 20130503024600) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
+
+  add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
 
 end
