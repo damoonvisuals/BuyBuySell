@@ -9,7 +9,7 @@
       <span class="listing-title">
         <%= link_to "#{listing.title} - $#{listing.price}", listing %>
       </span>
-      <p><%= listing.description %> asdausdhaisuhd asduhaisduha asduhasiduhas</p>
+      <p><%= listing.description %></p>
     </div>
     <!-- -->
     <!-- <span>Tags: <%= raw listing.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span> -->
@@ -20,7 +20,7 @@
       <div class="listing-button-block">
         <li style="padding:0px;">
           <div class="listing-star-button">
-            <%= link_to "#{listing.followers.count + 100}", followers_listing_path(listing), class: "listing-star-link" %>
+            <%= link_to "#{listing.followers.count + 1}", followers_listing_path(listing), class: "listing-star-link" %>
             <!-- <a href="<%= followers_listing_path(listing) %>">Stars: <%= listing.followers.count + 1%></a> -->
           </div>
         </li>
