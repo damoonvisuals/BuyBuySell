@@ -1,5 +1,10 @@
+<% if params[:query].blank? %>
 <% provide(:title, 'All listings') %>
 <h1>All Listings</h1>
+<% else %>
+<% provide(:title, params[:query]) %>
+<h1>Results for <i><%= params[:query] %></i>...</h1>
+<% end %>
 
 <ul class="listings">
   <%= render @listings %>
