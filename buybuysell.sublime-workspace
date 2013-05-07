@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"tag",
+				"tag_list"
+			],
+			[
 				"remember",
 				"remember_me"
 			],
@@ -36,26 +40,51 @@
 	"buffers":
 	[
 		{
-			"file": "app/models/user.rb",
+			"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
 			"settings":
 			{
-				"buffer_size": 6054,
+				"buffer_size": 12970,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/application.rb",
+			"contents": "<li>\n  <div class=\"listing-block\">\n    <div class=\"listing-image-block\">\n      <span class=\"image_placeholder\">\n        <%= image_tag listing.image_url(:thumb).to_s %>\n      </span>\n    </div>\n    <div class=\"listing-content-block\">\n      <span class=\"listing-title\">\n        <%= link_to \"#{listing.title} - $#{listing.price}\", listing %>\n      </span>\n      <p><%= listing.description %> asdausdhaisuhd asduhaisduha asduhasiduhas</p>\n    </div>\n    <!-- -->\n    <!-- <span>Tags: <%= raw listing.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span> -->\n    <!--<span class=\"timestamp\">\n      Posted <%= time_ago_in_words(listing.created_at) %> ago.\n    </span>-->\n    <ul style=\"list-style:none;margin: 0;\">\n      <div class=\"listing-button-block\">\n        <li style=\"padding:0px;\">\n          <div class=\"listing-star-button\">\n            <%= link_to \"#{listing.followers.count + 1}\", followers_listing_path(listing), class: \"listing-star-link\" %>\n            <!-- <a href=\"<%= followers_listing_path(listing) %>\">Stars: <%= listing.followers.count + 1%></a> -->\n          </div>\n        </li>\n        <li style=\"padding:0px;\">\n          <div class=\"listing-readmore-button\">\n            <%= link_to \"read more\", listing, class: \"listing-readmore-link\" %>\n          </div>\n        </li>\n      </div>\n    </ul>\n    <!-- <% if current_user?(listing.user) %>\n    <%= link_to \"delete\", listing, method: :delete,\n    data: { confirm: \"Delete your listing?\" },\n    title: listing.title %>\n    <% end %> -->\n  </div>\n</li>",
+			"file": "app/views/listings/_listing.html.erb",
+			"file_size": 1527,
+			"file_write_time": 1367807323000000,
 			"settings":
 			{
-				"buffer_size": 3341,
+				"buffer_size": 1525,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Gemfile",
+			"contents": "<header class=\"navbar navbar-fixed-top\">\n  <div class=\"navbar-inner\" style=\"min-width:640px;\">\n    <div class=\"container\" style=\"margin-left:0px; margin-right:0px; width:100%;\">\n      <%= link_to \"buybuysell.org\", root_path, id: \"logo\" %>\n      <%= form_tag listings_path, method: :get, class: \"navbar-search\" do %>\n      <%= text_field_tag :query, params[:query], class: \"search-query\", placeholder: \"Search for anything..\" %>\n      <% end %>\n      <ul class=\"nav pull-right\">\n        <% if signed_in? %>\n        <li id=\"fat-menu\" class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            Account <b class=\"caret\"></b>\n          </a>dhh\n          <ul class=\"dropdown-menu\">\n            <li><%= link_to \"Profile\", current_user %></li>\n            <li><%= link_to \"Settings\", edit_user_registration_path %></li>\n            <li class=\"divider\"></li>\n            <li>\n              <%= link_to \"Sign out\", signout_path, method: \"delete\" %>\n            </li>\n          </ul>\n        </li>\n        <% else %>\n        <li><%= link_to \"Sign in\", signin_path %></li>\n        <li><%= link_to \"Twitter\", user_omniauth_authorize_path(:twitter) %></li>\n        <li><%= link_to \"Facebook\", user_omniauth_authorize_path(:facebook) %></li>\n        <li><%= link_to \"Google\", user_omniauth_authorize_path(:google_oauth2) %></li>\n\n        <% end %>\n      </ul>\n\n    </div>\n  </div>\n</header>",
+			"file": "app/views/layouts/_header.html.erb",
+			"file_size": 1413,
+			"file_write_time": 1367746518000000,
 			"settings":
 			{
-				"buffer_size": 1220,
+				"buffer_size": 1416,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<ul class=\"nav nav-list bs-docs-sidenav affix\">\n  <li>\n    <a rel=\"tooltip\" href=\"<%= root_path %>\" title=\"Starred Listings\" data-placement=\"right\">\n      <%= image_tag 'sidebar/starred.svg', size: \"30x30\" %>\n    </a>\n  </li>w\n  <li>\n    <a data-placement=\"right\" rel=\"tooltip\" href=\"<%= conversations_path %>\" title=\"Messages\">\n      <%= image_tag 'sidebar/messages.svg', size: \"30x30\" %>\n    </a>\n  </li>\n  <li>\n    <a data-placement=\"right\" rel=\"tooltip\" href=\"<%= listings_path %>\" title=\"Tags\">\n      <%= image_tag 'sidebar/categories_tag.svg', size: \"30x30\" %>\n    </a>\n  </li>\n  <li>\n    <a data-placement=\"right\" rel=\"tooltip\" href=\"<%= user_path(current_user) %>\" title=\"My Profile\">\n      <%= image_tag 'sidebar/profile.svg', size: \"30x30\" %>\n    </a>\n  </li>\n  <li>\n    <a data-placement=\"right\" rel=\"tooltip\" href=\"<%= new_listing_path %>\" title=\"Create Listing\">\n      <%= image_tag 'sidebar/addlisting.svg', size: \"30x30\" %>\n    </a>\n  </li>\n</ul>",
+			"file": "app/views/layouts/_sidebar.html.erb",
+			"file_size": 960,
+			"file_write_time": 1367105874000000,
+			"settings":
+			{
+				"buffer_size": 961,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/shared/_feed_item.html.erb",
+			"settings":
+			{
+				"buffer_size": 1578,
 				"line_ending": "Unix"
 			}
 		}
@@ -88,45 +117,75 @@
 	},
 	"file_history":
 	[
-		"/home/dasun/BuyBuySell/config/application.rb",
-		"/home/dasun/BuyBuySell/app/controllers/omniauth_callbacks_controller.rb",
+		"/home/dasun/BuyBuySell/app/views/listings/show.html.erb",
+		"/home/dasun/BuyBuySell/app/uploaders/image_uploader.rb",
+		"/home/dasun/BuyBuySell/app/views/conversations/show.html.erb",
+		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
+		"/home/dasun/BuyBuySell/app/views/shared/_feed_item.html.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/index.html.erb",
+		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
+		"/home/dasun/BuyBuySell/app/models/listing.rb",
 		"/home/dasun/BuyBuySell/Gemfile",
+		"/home/dasun/BuyBuySell/app/controllers/listings_controller.rb",
+		"/home/dasun/BuyBuySell/app/assets/javascripts/application.js",
+		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
+		"/home/dasun/BuyBuySell/app/views/layouts/_sidebar.html.erb",
+		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_form.html.erb",
+		"/home/dasun/BuyBuySell/db/migrate/20130505103945_add_index_to_tag_text_listings.rb",
+		"/home/dasun/BuyBuySell/config/routes.rb",
+		"/home/dasun/BuyBuySell/db/schema.rb",
+		"/home/dasun/BuyBuySell/db/migrate/20130505103640_add_tag_text_to_listings.rb",
+		"/home/dasun/BuyBuySell/db/migrate/20130414231203_create_listings.rb",
+		"/home/dasun/BuyBuySell/app/models/user.rb",
+		"/home/dasun/BuyBuySell/app/controllers/users_controller.rb",
+		"/home/dasun/BuyBuySell/app/views/listings/new.html.erb",
+		"/home/dasun/BuyBuySell/db/migrate/20130505094535_add_tag_list_column_to_listings.rb",
+		"/home/dasun/BuyBuySell/db/migrate/20130505083111_add_index_to_listings.rb",
+		"/home/dasun/BuyBuySell/app/controllers/omniauth_callbacks_controller.rb",
+		"/home/dasun/BuyBuySell/config/database.yml",
+		"/home/dasun/BuyBuySell/config/database_old.yml",
+		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q0/q0",
+		"/home/dasun/BuyBuySell/app/views/shared/_user_info.html.erb",
+		"/home/dasun/BuyBuySell/db/migrate/20130503024534_dropratingstable.rb",
+		"/home/dasun/BuyBuySell/db/migrate/20130503023154_add_rateableto_user.rb",
+		"/home/dasun/BuyBuySell/app/models/bid.rb",
+		"/home/dasun/BuyBuySell/app/controllers/bids_controller.rb",
+		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
+		"/home/dasun/BuyBuySell/app/controllers/conversations_controller.rb",
+		"/home/dasun/BuyBuySell/app/views/conversations/_form.html.erb",
+		"/home/dasun/BuyBuySell/app/views/bids/_bid.html.erb",
+		"/home/dasun/BuyBuySell/app/models/comment.rb",
+		"/home/dasun/BuyBuySell/db/migrate/20130502013215_create_bids.rb",
+		"/home/dasun/BuyBuySell/app/controllers/comments_controller.rb",
+		"/home/dasun/BuyBuySell/app/views/comments/_comment.html.erb",
+		"/home/dasun/BuyBuySell/app/views/users/new.html.erb",
+		"/home/dasun/BuyBuySell/config/locales/en.yml",
+		"/home/dasun/BuyBuySell/app/controllers/listing_relationships_controller.rb",
+		"/home/dasun/BuyBuySell/app/models/listing_relationship.rb",
+		"/home/dasun/BuyBuySell/app/helpers/sessions_helper.rb",
+		"/home/dasun/BuyBuySell/db/migrate/20130502013830_create_biddables.rb",
+		"/home/dasun/BuyBuySell/config/environments/production.rb",
+		"/home/dasun/BuyBuySell/app/models/biddable.rb",
+		"/home/dasun/BuyBuySell/config/application.rb",
 		"/home/dasun/BuyBuySell/config.ru",
 		"/home/dasun/BuyBuySell/app/views/devise/registrations/new.html.erb",
 		"/home/dasun/BuyBuySell/config/initializers/devise.rb",
-		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
 		"/home/dasun/BuyBuySell/app/views/devise/shared/_links.erb",
-		"/home/dasun/BuyBuySell/config/routes.rb",
 		"/home/dasun/BuyBuySell/app/views/devise/registrations/edit.html.erb",
 		"/home/dasun/BuyBuySell/app/views/shared/_error_messages.html.erb",
 		"/home/dasun/BuyBuySell/config/initializers/omniauth.rb",
 		"/home/dasun/BuyBuySell/app/views/users/edit.html.erb",
 		"/home/dasun/BuyBuySell/app/views/devise/registrations/new_backup.html.erb",
-		"/home/dasun/BuyBuySell/app/controllers/users_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/devise/confirmations/new.html.erb",
 		"/home/dasun/BuyBuySell/app/controllers/confirmations_controller.rb",
-		"/home/dasun/BuyBuySell/app/models/user.rb",
 		"/home/dasun/BuyBuySell/app/controllers/registrations_controller.rb",
-		"/home/dasun/BuyBuySell/config/locales/en.yml",
-		"/home/dasun/BuyBuySell/app/controllers/listings_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/devise/sessions/new.html.erb",
 		"/home/dasun/BuyBuySell/app/views/static_pages/home.html.erb",
-		"/home/dasun/BuyBuySell/app/controllers/conversations_controller.rb",
-		"/home/dasun/BuyBuySell/app/views/users/new.html.erb",
-		"/home/dasun/BuyBuySell/app/views/layouts/_sidebar.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listings/show.html.erb",
 		"/home/dasun/BuyBuySell/app/views/users/_fields.html.erb",
-		"/home/dasun/BuyBuySell/app/helpers/sessions_helper.rb",
-		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
 		"/home/dasun/BuyBuySell/db/migrate/20130428182513_add_devise_to_users.rb",
-		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
 		"/home/dasun/BuyBuySell/config/environments/development.rb",
-		"/home/dasun/BuyBuySell/config/environments/production.rb",
 		"/home/dasun/BuyBuySell/config/environment.rb",
-		"/home/dasun/BuyBuySell/app/views/comments/_comment.html.erb",
-		"/home/dasun/BuyBuySell/app/models/listing.rb",
-		"/home/dasun/BuyBuySell/app/models/comment.rb",
-		"/home/dasun/BuyBuySell/app/controllers/comments_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/shared/_comment_form.html.erb",
 		"/home/dasun/.cache/.fr-Mxzfka/dasun.us/app/views/static_pages/home.html.erb",
 		"/home/dasun/.cache/.fr-igRmID/dasun.us/app/controllers/microposts_controller.rb",
@@ -135,21 +194,15 @@
 		"/home/dasun/.cache/.fr-BmTs58/dasun.us/app/views/microposts/_micropost.html.erb",
 		"/home/dasun/.cache/.fr-B0Mgsf/dasun.us/app/views/microposts/_micropost.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/_conversation.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
 		"/home/dasun/BuyBuySell/app/views/comments/_form.html.erb",
 		"/home/dasun/BuyBuySell/app/views/users/_user.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/show_comment.html.erb",
 		"/home/dasun/BuyBuySell/app/views/shared/_stats.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/index.html.erb",
-		"/home/dasun/BuyBuySell/app/controllers/listing_relationships_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/listing_relationships/create.js.erb",
 		"/home/dasun/BuyBuySell/app/views/listing_relationships/destroy.js.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_unfollow.html.erb",
-		"/home/dasun/BuyBuySell/app/models/listing_relationship.rb",
 		"/home/dasun/BuyBuySell/app/views/listings/_follow.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listings/_form.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listings/new.html.erb",
-		"/home/dasun/BuyBuySell/app/views/shared/_feed_item.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_fields.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/show_follow.html.erb",
 		"/home/dasun/BuyBuySell/spec/models/listing_spec.rb",
@@ -157,7 +210,6 @@
 		"/home/dasun/BuyBuySell/app/models/category.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130426231806_create_categorizations.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130415023316_create_listing_relationships.rb",
-		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_follow_form.html.erb",
 		"/home/dasun/BuyBuySell/app/controllers/static_pages_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/listings/_form.htmlerb",
@@ -165,11 +217,8 @@
 		"/home/dasun/BuyBuySell/spec/requests/user_pages_spec.rb",
 		"/home/dasun/BuyBuySell/app/views/users/show_message.html.erb",
 		"/home/dasun/BuyBuySell/config/environments/test.rb",
-		"/home/dasun/BuyBuySell/app/views/conversations/_form.html.erb",
 		"/home/dasun/BuyBuySell/app/views/messages/_form.html.erb",
-		"/home/dasun/BuyBuySell/app/views/conversations/show.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/new.html.erb",
-		"/home/dasun/BuyBuySell/app/views/shared/_user_info.html.erb",
 		"/home/dasun/BuyBuySell/app/views/shared/_msg.html.erb",
 		"/home/dasun/BuyBuySell/app/views/shared/_msg_item.html.erb",
 		"/home/dasun/BuyBuySell/config/initializers/mailboxer.rb",
@@ -195,27 +244,7 @@
 		"/home/dasun/.cache/.fr-JIct8O/dasun.us/app/controllers/microposts_controller.rb",
 		"/home/dasun/.cache/.fr-J0ucYE/dasun.us/app/controllers/users_controller.rb",
 		"/home/dasun/.cache/.fr-NSGRiW/dasun.us/app/views/shared/_micropost_form.html.erb",
-		"/home/dasun/.cache/.fr-fzQWk6/dasun.us/app/views/static_pages/home.html.erb",
-		"/home/dasun/.cache/.fr-m4okcK/dasun.us/app/views/users/show.html.erb",
-		"/home/dasun/.cache/.fr-q5dVlp/dasun.us/app/views/users/show_follow.html.erb",
-		"/home/dasun/.cache/.fr-TxBV6l/dasun.us/app/views/microposts/_micropost.html.erb",
-		"/home/dasun/BuyBuySell/app/assets/javascripts/application.js",
-		"/home/dasun/BuyBuySell/app/views/listings/index.html.erb",
-		"/home/dasun/BuyBuySell/faye.ru",
-		"/home/dasun/BuyBuySell/app/views/layouts/_footer.html.erb",
-		"/home/dasun/BuyBuySell/app/views/shared/_feed.html.erb",
-		"/home/dasun/BuyBuySell/app/views/shared/_listing_form.html.erb",
-		"/home/dasun/BuyBuySell/app/helpers/users_helper.rb",
-		"/home/dasun/BuyBuySell/db/migrate/20130331215848_create_users.rb",
-		"/home/dasun/BuyBuySell/app/controllers/beta_users_controller.rb",
-		"/home/dasun/BuyBuySell/app/views/beta_users/_fields.html.erb",
-		"/home/dasun/BuyBuySell/app/views/beta_users/new.html.erb",
-		"/home/dasun/BuyBuySell/app/assets/javascripts/bootstrap.js.coffee",
-		"/home/dasun/BuyBuySell/app/assets/javascripts/static_pages.js.coffee",
-		"/home/dasun/BuyBuySell/app/models/beta_user.rb",
-		"/home/dasun/BuyBuySell/app/views/static_pages/contact.html.erb",
-		"/home/dasun/BuyBuySell/app/views/static_pages/help.html.erb",
-		"/home/dasun/BuyBuySell/config/initializers/mime_types.rb"
+		"/home/dasun/.cache/.fr-fzQWk6/dasun.us/app/views/static_pages/home.html.erb"
 	],
 	"find":
 	{
@@ -235,6 +264,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"block",
+			"listings",
+			"margin",
+			"listing",
+			"font",
+			"align",
+			";\n",
+			"input",
+			"create_remember_token",
 			"password",
 			"font-weight",
 			"font-style",
@@ -302,89 +340,145 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/models/user.rb",
+					"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
 					"settings":
 					{
-						"buffer_size": 6054,
+						"buffer_size": 12970,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								602,
-								602
+								8921,
+								8921
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5165.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "config/application.rb",
+					"file": "app/views/listings/_listing.html.erb",
 					"settings":
 					{
-						"buffer_size": 3341,
+						"buffer_size": 1525,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3231,
-								3231
+								891,
+								891
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1020.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "Gemfile",
+					"file": "app/views/layouts/_header.html.erb",
 					"settings":
 					{
-						"buffer_size": 1220,
+						"buffer_size": 1416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1041,
-								1041
+								679,
+								679
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/layouts/_sidebar.html.erb",
+					"settings":
+					{
+						"buffer_size": 961,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/shared/_feed_item.html.erb",
+					"settings":
+					{
+						"buffer_size": 1578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930,
+								930
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -438,19 +532,159 @@
 		"selected_items":
 		[
 			[
-				"applica",
-				"config/application.rb"
+				"feed",
+				"app/views/shared/_feed_item.html.erb"
+			],
+			[
+				"show",
+				"app/views/listings/show.html.erb"
+			],
+			[
+				"side",
+				"app/views/layouts/_sidebar.html.erb"
+			],
+			[
+				"app",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"head",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"",
+				"app/views/users/show.html.erb"
+			],
+			[
+				"listing",
+				"app/views/listings/_listing.html.erb"
+			],
+			[
+				"index",
+				"app/views/listings/index.html.erb"
+			],
+			[
+				"boot",
+				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+			],
+			[
+				"appli",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"header",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"applicaio",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"new",
+				"app/views/listings/new.html.erb"
+			],
+			[
+				"listin",
+				"app/models/listing.rb"
+			],
+			[
+				"boots",
+				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+			],
+			[
+				"data",
+				"config/database.yml"
 			],
 			[
 				"gemfile",
 				"Gemfile"
 			],
 			[
-				"applicat",
+				"shared",
+				"app/views/shared/_user_info.html.erb"
+			],
+			[
+				"gemfil",
+				"Gemfile"
+			],
+			[
+				"user_in",
+				"app/views/shared/_user_info.html.erb"
+			],
+			[
+				"_listin",
+				"app/views/listings/_listing.html.erb"
+			],
+			[
+				"shot",
+				"app/views/listings/show.html.erb"
+			],
+			[
+				"bid",
+				"app/controllers/bids_controller.rb"
+			],
+			[
+				"comment",
+				"app/models/comment.rb"
+			],
+			[
+				"bi",
+				"app/controllers/bids_controller.rb"
+			],
+			[
+				"_bid",
+				"app/views/bids/_bid.html.erb"
+			],
+			[
+				"bids",
+				"app/controllers/bids_controller.rb"
+			],
+			[
+				"users",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"bid.rb",
+				"app/models/bid.rb"
+			],
+			[
+				"en",
+				"config/locales/en.yml"
+			],
+			[
+				"form",
+				"app/views/listings/_form.html.erb"
+			],
+			[
+				"session",
+				"app/helpers/sessions_helper.rb"
+			],
+			[
+				"show.",
+				"app/views/listings/show.html.erb"
+			],
+			[
+				"applica",
 				"config/application.rb"
 			],
 			[
-				"appli",
+				"applicat",
 				"config/application.rb"
 			],
 			[
@@ -474,30 +708,6 @@
 				"config/initializers/devise.rb"
 			],
 			[
-				"header",
-				"app/views/layouts/_header.html.erb"
-			],
-			[
-				"user",
-				"app/models/user.rb"
-			],
-			[
-				"gem",
-				"Gemfile"
-			],
-			[
-				"shared",
-				"app/views/shared/_error_messages.html.erb"
-			],
-			[
-				"routes",
-				"config/routes.rb"
-			],
-			[
-				"en",
-				"config/locales/en.yml"
-			],
-			[
 				"de",
 				"config/initializers/devise.rb"
 			],
@@ -518,10 +728,6 @@
 				"app/views/layouts/_sidebar.html.erb"
 			],
 			[
-				"boot",
-				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
-			],
-			[
 				"produ",
 				"config/environments/production.rb"
 			],
@@ -538,32 +744,12 @@
 				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
 			],
 			[
-				"listing",
-				"app/models/listing.rb"
-			],
-			[
-				"side",
-				"app/views/layouts/_sidebar.html.erb"
-			],
-			[
 				"application",
 				"app/views/layouts/application.html.erb"
 			],
 			[
-				"comment",
-				"app/models/comment.rb"
-			],
-			[
-				"show",
-				"app/views/listings/show.html.erb"
-			],
-			[
 				"comments",
 				"app/controllers/comments_controller.rb"
-			],
-			[
-				"form",
-				"app/views/comments/_form.html.erb"
 			],
 			[
 				"stats",
@@ -572,10 +758,6 @@
 			[
 				"ind",
 				"app/views/conversations/index.html.erb"
-			],
-			[
-				"users",
-				"app/controllers/users_controller.rb"
 			],
 			[
 				"lis",
@@ -596,14 +778,6 @@
 			[
 				"_follower",
 				"app/views/listings/_follow.html.erb"
-			],
-			[
-				"listin",
-				"app/models/listing.rb"
-			],
-			[
-				"feed",
-				"app/views/shared/_feed_item.html.erb"
 			],
 			[
 				"listi",
@@ -690,10 +864,6 @@
 				"app/controllers/conversations_controller.rb"
 			],
 			[
-				"",
-				"app/controllers/users_controller.rb"
-			],
-			[
 				"message",
 				"app/controllers/messages_controller.rb"
 			],
@@ -704,10 +874,6 @@
 			[
 				"_",
 				"app/views/layouts/_sidebar.html.erb"
-			],
-			[
-				"gemfil",
-				"Gemfile"
 			],
 			[
 				"home",
@@ -752,10 +918,6 @@
 			[
 				"applic",
 				"app/views/layouts/application.html.erb"
-			],
-			[
-				"head",
-				"app/views/layouts/_header.html.erb"
 			],
 			[
 				"custom",
@@ -846,10 +1008,6 @@
 				"app/views/users/edit.html.erb"
 			],
 			[
-				"new",
-				"app/views/users/new.html.erb"
-			],
-			[
 				"h",
 				"app/views/static_pages/help.html.erb"
 			],
@@ -884,58 +1042,6 @@
 			[
 				"micros",
 				"app/models/micropost.rb"
-			],
-			[
-				"authe",
-				"spec/requests/authentication_pages_spec.rb"
-			],
-			[
-				"users_control",
-				"app/controllers/users_controller.rb"
-			],
-			[
-				"index",
-				"app/views/users/index.html.erb"
-			],
-			[
-				"sessions_",
-				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"session",
-				"app/helpers/sessions_helper.rb"
-			],
-			[
-				"utilities",
-				"spec/support/utilities.rb"
-			],
-			[
-				"utilit",
-				"spec/support/utilities.rb"
-			],
-			[
-				"user_se",
-				"spec/models/user_spec.rb"
-			],
-			[
-				"new.",
-				"app/views/users/new.html.erb"
-			],
-			[
-				"test.rb",
-				"config/environments/test.rb"
-			],
-			[
-				"route",
-				"config/routes.rb"
-			],
-			[
-				"cus",
-				"app/assets/stylesheets/custom.css.scss"
-			],
-			[
-				"spec",
-				"spec/spec_helper.rb"
 			]
 		],
 		"width": 0.0

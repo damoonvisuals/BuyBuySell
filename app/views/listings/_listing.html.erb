@@ -1,27 +1,40 @@
 <li>
-  <span class="listing-title">
-    <%= link_to "#{listing.title} - $#{listing.price}", listing %>
-  </span>
-  
-  <span class="user">
-    <%= link_to gravatar_for(listing.user), listing.user %>
-    <%= link_to listing.user.user_name, listing.user %>
-  </span>
-
-  <span class="image_placeholder">
-    <%= image_tag listing.image_url(:thumb).to_s %>
-  </span>
-  <span class="content"><%= listing.description %></span>
-  <span>Tags: <%= raw listing.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(listing.created_at) %> ago.
-  </span>
-  <span class="starred">
-    <a href="<%= followers_listing_path(listing) %>"><div id="followers">Stars: <%= listing.followers.count + 1%></div></a>
-  </span>
-  <% if current_user?(listing.user) %>
-  <%= link_to "delete", listing, method: :delete,
-  data: { confirm: "Delete your listing?" },
-  title: listing.title %>
-  <% end %>
+  <div class="listing-block">
+    <div class="listing-image-block">
+      <span class="image_placeholder">
+        <%= image_tag listing.image_url(:thumb).to_s %>
+      </span>
+    </div>
+    <div class="listing-content-block">
+      <span class="listing-title">
+        <%= link_to "#{listing.title} - $#{listing.price}", listing %>
+      </span>
+      <p><%= listing.description %> asdausdhaisuhd asduhaisduha asduhasiduhas</p>
+    </div>
+    <!-- -->
+    <!-- <span>Tags: <%= raw listing.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span> -->
+    <!--<span class="timestamp">
+      Posted <%= time_ago_in_words(listing.created_at) %> ago.
+    </span>-->
+    <ul style="list-style:none;margin: 0;">
+      <div class="listing-button-block">
+        <li style="padding:0px;">
+          <div class="listing-star-button">
+            <%= link_to "#{listing.followers.count + 100}", followers_listing_path(listing), class: "listing-star-link" %>
+            <!-- <a href="<%= followers_listing_path(listing) %>">Stars: <%= listing.followers.count + 1%></a> -->
+          </div>
+        </li>
+        <li style="padding:0px;">
+          <div class="listing-readmore-button">
+            <%= link_to "read more", listing, class: "listing-readmore-link" %>
+          </div>
+        </li>
+      </div>
+    </ul>
+    <!-- <% if current_user?(listing.user) %>
+    <%= link_to "delete", listing, method: :delete,
+    data: { confirm: "Delete your listing?" },
+    title: listing.title %>
+    <% end %> -->
+  </div>
 </li>

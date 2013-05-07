@@ -1,30 +1,40 @@
-<li id="<%= feed_item.id %>">
-  <span class="listing-title">
-    <%= link_to "#{feed_item.title} - $#{feed_item.price}", feed_item %>
-  </span>
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-  <span class="user">
-    <%= link_to feed_item.user.user_name, feed_item.user %>
-  </span>
-  <br />
-
-  <span class="image_placeholder">
-    <%= image_tag feed_item.image_url(:thumb).to_s %>
-  </span>
-  <span class="content"><%= feed_item.description %></span>
-  <span>Tags: <%= raw feed_item.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span>
-  <span class="stars">
-   <a href="<%= followers_listing_path(feed_item) %>">Stars: <%= feed_item.followers.count + 1%></a>
- </span>
- <span class="timestamp">
-  Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-</span>
-
-<% if current_user?(feed_item.user) %>
-<%= link_to "delete", feed_item, method: :delete,
-data: { confirm: "Delete your listing?" },
-title: feed_item.description %>
-<% else %>
-<%= link_to "Message #{feed_item.user.user_name}", new_conversation_path(email: @listing.user.email), class: "btn btn-large btn-primary" %>
-<% end %>
+<li id=<%= feed_item.id %>>
+  <div class="listing-block">
+    <div class="listing-image-block">
+      <span class="image_placeholder">
+        <%= image_tag feed_item.image_url(:thumb).to_s %>
+      </span>
+    </div>
+    <div class="listing-content-block">
+      <span class="listing-title">
+        <%= link_to "#{feed_item.title} - $#{feed_item.price}", feed_item %>
+      </span>
+      <p><%= feed_item.description %> asdausdhaisuhd asduhaisduha asduhasiduhas</p>
+    </div>
+    <!-- -->
+    <!-- <span>Tags: <%= raw feed_item.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span> -->
+    <!--<span class="timestamp">
+      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+    </span>-->
+    <ul style="list-style:none;margin: 0;">
+      <div class="listing-button-block">
+        <li style="padding:0px;">
+          <div class="listing-star-button">
+            <%= link_to "#{feed_item.followers.count + 1}", followers_listing_path(feed_item), class: "listing-star-link" %>
+            <!-- <a href="<%= followers_listing_path(feed_item) %>">Stars: <%= feed_item.followers.count + 1%></a> -->
+          </div>
+        </li>
+        <li style="padding:0px;">
+          <div class="listing-readmore-button">
+            <%= link_to "read more", feed_item, class: "listing-readmore-link" %>
+          </div>
+        </li>
+      </div>
+    </ul>
+    <!-- <% if current_user?(feed_item.user) %>
+    <%= link_to "delete", feed_item, method: :delete,
+    data: { confirm: "Delete your listing?" },
+    title: feed_item.title %>
+    <% end %> -->
+  </div>
 </li>

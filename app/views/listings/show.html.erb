@@ -4,10 +4,10 @@
 
 <div class="row">
   <aside class="span9">
-    <h2><%= @listing.title %></h2>
-    <section>
+    <h2><%= @listing.title %> - $<%= @listing.price %></h2>
+    <ul class="listings">
       <%= render @listing %>
-    </section>
+    </ul>
     <% if not right_user and signed_in? %>
     <section>
       <%= render 'follow_form' %>
