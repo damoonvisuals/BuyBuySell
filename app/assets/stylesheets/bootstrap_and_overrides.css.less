@@ -109,8 +109,8 @@
 @navbarLinkColor: @black;
 @navbarLinkColorHover: @white;
 @navbarLinkColorActive: @white;
-@navbarLinkBackgroundHover: @liHighlightColor;
-@navbarLinkBackgroundActive: @gray;
+//@navbarLinkBackgroundHover: @liHighlightColor;
+//@navbarLinkBackgroundActive: @gray;
 
 .nav {
     font-family: 'Quicksand', Arial, sans-serif;
@@ -194,10 +194,10 @@
     line-height: 1;
 
     &:hover {
-      color: @white;
+      color: @liHighlightColor;
       text-decoration: none;
-      background-color: @liHighlightColor;
-      .box-shadow(inset #7c1d08 0px 0px 1px);
+      //background-color: @liHighlightColor;
+      //.box-shadow(inset #7c1d08 0px 0px 1px);
     }
 }
 
@@ -206,10 +206,12 @@
     background-image: none;
 }
 
-.power-image:hover {
-  //background-color: @white;
-  //.opacity(0.5);
+.dropdown-toggle:hover, .dropdown-toggle:active, .dropdown-toggle:focus {
+  .power-image path{
+    fill: @liHighlightColor;
+  }
 }
+
 
 
 //Search Bar
@@ -269,37 +271,34 @@ footer {
 }
 
 .utilitybar-link {
-  font-size: 1.25em;
-  font-weight: bold;
   height: 100%;
-  padding-top: 15px;
-  padding-left: 50%;
+  padding-top: 10px;
+  padding-left: 22%;
   display: block;
   color: #4a4a4a;
-  &:hover {
-    text-decoration: none;
-    color: @liHighlightColor;  
-    .box-shadow(inset @liHighlightColor 0px 0px 2px);
-  }
 }
 
+#text {
+  position:absolute;
+  font-size: 1.25em;
+  font-weight: bold;
+  bottom: 13px;
+  margin-left: 50%;
+}
 
-.utilitybar-messages {
-  background: asset-url("utilitybar/link-mailbox.svg") no-repeat scroll 25% 10px;
-  background-size: 30px 30px;
-  &:hover {
-    background: asset-url("utilitybar/hover-mailbox.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
+.utilitybar-icons {
+  &:hover, &:active, &:focus {
+    a {
+      text-decoration: none;
+      color: @liHighlightColor;  
+    }
+    path {
+      fill: @liHighlightColor;
+    }
+    .box-shadow(inset @liHighlightColor 0px 0px 2px);
   }
-  &:active {
-    background: asset-url("utilitybar/hover-mailbox.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
-  &:focus {
-    background: asset-url("utilitybar/hover-mailbox.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
+  a {
+    color: #4a4a4a;
   }
 }
 
@@ -307,66 +306,6 @@ footer {
   height: 50px;
   position: absolute; 
   width: 25%;
-}
-
-.utilitybar-profile {
-  margin-left: 25%;
-  background: asset-url("utilitybar/link-profile.svg") no-repeat scroll 25% 10px;
-  background-size: 30px 30px;
-  &:hover {
-    background: asset-url("utilitybar/hover-profile.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-  }
-  &:active {
-    background: asset-url("utilitybar/hover-profile.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
-  &:focus {
-    background: asset-url("utilitybar/hover-profile.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
-}
-
-.utilitybar-browse {
-  margin-left: 50%;
-  background: asset-url("utilitybar/link-browse.svg") no-repeat scroll 25% 10px;
-  background-size: 30px 30px;
-  &:hover {
-    background: asset-url("utilitybar/hover-browse.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-  }
-  &:active {
-    background: asset-url("utilitybar/hover-browse.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
-  &:focus {
-    background: asset-url("utilitybar/hover-browse.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
-}
-
-.utilitybar-listing {
-  margin-left: 75%;
-  background: asset-url("utilitybar/link-listing.svg") no-repeat scroll 25% 10px;
-  background-size: 30px 30px;
-  &:hover {
-    background: asset-url("utilitybar/hover-listing.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-  }
-  &:active {
-    background: asset-url("utilitybar/hover-listing.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
-  &:focus {
-    background: asset-url("utilitybar/hover-listing.svg") no-repeat scroll 25% 10px;
-    background-size: 30px 30px;
-    background-color: #d4d4d4;
-  }
 }
 
 //Button

@@ -3,23 +3,27 @@
     <div class="container" style="width:100%;">
       <ul class="nav" style="margin: 0px; width: 100%;">
         <li>
-          <div class="utilitybar-messages utilitybar-spacing">
-            <%= link_to "Messages", conversations_path, class: "utilitybar-link" %>
+          <div class="utilitybar-icons utilitybar-spacing">
+            <%= link_to image_tag("utilitybar/link-mailbox.svg", class: "svg"), conversations_path, class: "utilitybar-link" %>
+            <%= link_to "Messages", conversations_path, id: "text" %>
           </div>
         </li>
         <li>
-          <div class="utilitybar-profile utilitybar-spacing">
-            <%= link_to "Profile", user_path(current_user), class: "utilitybar-link" %>
+          <div class="utilitybar-icons utilitybar-spacing" style="margin-left: 25%;">
+            <%= link_to image_tag("utilitybar/link-profile.svg", class: "svg"), user_path(current_user), class: "utilitybar-link" %>
+            <%= link_to "Profile", user_path(current_user), id: "text" %>
           </div>
         </li>
         <li>
-          <div class="utilitybar-browse utilitybar-spacing">
-            <%= link_to "Browse", listings_path, class: "utilitybar-link" %>
+          <div class="utilitybar-icons utilitybar-spacing" style="margin-left: 50%;">
+            <%= link_to image_tag("utilitybar/link-browse.svg", class: "svg"), listings_path, class: "utilitybar-link" %>
+            <%= link_to "Browse", listings_path, id: "text" %>
           </div>
         </li>
         <li>
-          <div class="utilitybar-listing utilitybar-spacing">
-            <%= link_to "Create Listing", new_listing_path, class: "utilitybar-link" %>
+          <div class="utilitybar-icons utilitybar-spacing" style="margin-left: 75%;">
+            <%= link_to image_tag("utilitybar/link-listing.svg", class: "svg"), new_listing_path, class: "utilitybar-link" %>
+            <%= link_to "New Listing", new_listing_path, id: "text" %>
           </div>
         </li>
       </ul>
