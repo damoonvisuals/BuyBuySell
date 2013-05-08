@@ -1,0 +1,28 @@
+<div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <div class="container" style="width:100%;">
+      <ul class="nav" style="margin: 0px; width: 100%;">
+        <li>
+          <div class="utilitybar-messages utilitybar-spacing">
+            <%= link_to "Messages", conversations_path, class: "utilitybar-link" %>
+          </div>
+        </li>
+        <li>
+          <div class="utilitybar-profile utilitybar-spacing">
+            <%= link_to "Profile", user_path(current_user), class: "utilitybar-link" %>
+          </div>
+        </li>
+        <li>
+          <div class="utilitybar-browse utilitybar-spacing">
+            <%= link_to "Browse", listings_path, class: "utilitybar-link" %>
+          </div>
+        </li>
+        <li>
+          <div class="utilitybar-listing utilitybar-spacing">
+            <%= link_to "Create Listing", new_listing_path, class: "utilitybar-link" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

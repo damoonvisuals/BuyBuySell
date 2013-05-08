@@ -10,15 +10,8 @@
 </head>
 <body style='font-family: "Quicksand", Arial, sans-serif;'>
   <%= render 'layouts/header' %>
-  <% if signed_in? %>
-  <div class="bs-docs-sidebar">
-    <%= render 'layouts/sidebar' %>
-  </div>
-  <div class="container" style="padding: 15px 8px 0px 60px;">
-  <% else %>
-    <div class="container" style="padding-top: 15px;">
-  <% end %>
-  
+  <div class="container" style="padding-top: 15px;">
+
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
@@ -26,6 +19,11 @@
     <!-- <%= render 'layouts/footer' %> -->
     <%= debug(params) if Rails.env.development? %>
   </div>
+
+  <% if signed_in? %>
+  <%= render 'layouts/utilitybar' %>
+  <% end %>
+
   <%= javascript_include_tag "application" %>
 </body>
 </html>

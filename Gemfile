@@ -25,6 +25,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'pg_search'
+gem 'thin'
 
 group :development, :test do
   # gem 'sqlite3', '1.3.5'
