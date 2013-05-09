@@ -392,6 +392,8 @@ footer {
   user-drag: none;    
 }
 
+@buttonBlockTextColor: #3c3c3c;
+
 //Listing Index view
 .listing-block {
   width: 310px;
@@ -452,19 +454,17 @@ footer {
 
        &:hover {
         background-color: @navbarBottomBackground;
-        .listing-star-image {
-          .translate(120px, 0px);
-          .transition(all .4s linear);
-        }
        }
 
        .listing-star-link {
          position: absolute;
-         padding-top: 1.5%;
-         height: 90%;
+         padding-top: 3.5%;
+         height: 72.5%;
          display: block;
-         color: @white;
+         width: 50%;
+         color: @buttonBlockTextColor;
          text-decoration: none;
+         text-align: center;
        }
     }
     .listing-readmore-button {
@@ -479,41 +479,24 @@ footer {
           position: absolute;
           display: block;
           padding-top: 3.5%;
-          padding-left: 11%;
-          height: 70%;
-          width: 39%;
-          color: #3c3c3c;
+          height: 72.5%;
+          text-align: center;
+          width: 50%;
+          color: @buttonBlockTextColor;
        }
     }
   }
 }
-#count-text {
-  position:absolute;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #3c3c3c;
-  text-decoration: none;
-  bottom: 10px;
-  margin-left: 25%;
-}
 .starred {
   background-color: @liHighlightColor;
-  &:hover {
-    .listing-nonstar-image {
-      .translate(-120px, 0px);
-      .transition(all .4s linear);
+  .box-shadow(inset #7c1d08 0px 0px 1px);
+  .listing-star-link {
+    color: @white !important;
+    &:hover {
+      color: @buttonBlockTextColor !important;
     }
   }
 }
-.star-left {
-  padding-left: 1%;
-  width: 49%;
-}
-.star-right {
-  padding-left: 40%;
-  width: 5%;
-}
-
 
 //Changing Generic Elements
 html {
@@ -528,7 +511,7 @@ body {
 section {
     overflow: auto;
 }
-img {
+img, a {
   .select-none();
 }
 input, textarea, .uneditable-input {
