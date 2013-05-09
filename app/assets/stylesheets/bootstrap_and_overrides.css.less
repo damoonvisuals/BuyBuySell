@@ -457,16 +457,11 @@ footer {
           .transition(all .4s linear);
         }
        }
-       &:active, &:focus {
-
-       }
 
        .listing-star-link {
          position: absolute;
          padding-top: 1.5%;
-         padding-left: 1%;
          height: 90%;
-         width: 49%;
          display: block;
          color: @white;
          text-decoration: none;
@@ -501,7 +496,23 @@ footer {
   bottom: 10px;
   margin-left: 25%;
 }
-
+.starred {
+  background-color: @liHighlightColor;
+  &:hover {
+    .listing-nonstar-image {
+      .translate(-120px, 0px);
+      .transition(all .4s linear);
+    }
+  }
+}
+.star-left {
+  padding-left: 1%;
+  width: 49%;
+}
+.star-right {
+  padding-left: 40%;
+  width: 5%;
+}
 
 
 //Changing Generic Elements

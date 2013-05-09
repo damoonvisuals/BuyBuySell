@@ -15,7 +15,7 @@
       <div class="listing-button-block">
         <li style="padding:0px;">
           <div class="listing-star-button">
-            <%= link_to image_tag("listing/numbercircle.svg", class: "svg listing-star-image"), followers_listing_path(listing), class: "listing-star-link" %>
+            <%= link_to image_tag("listing/numbercircle.svg", class: "svg listing-star-image"), followers_listing_path(listing), class: "listing-star-link star-left" %>
             <%= link_to "#{listing.followers.count + 1}", followers_listing_path(listing), id: "count-text" %>
           </div>
         </li>

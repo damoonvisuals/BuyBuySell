@@ -47,46 +47,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
-			"settings":
-			{
-				"buffer_size": 16488,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/listings/_listing.html.erb",
-			"settings":
-			{
-				"buffer_size": 1098,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/_header.html.erb",
-			"settings":
-			{
-				"buffer_size": 1666,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/users/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 1067,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 759,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -116,6 +76,12 @@
 	},
 	"file_history":
 	[
+		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
+		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
+		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
+		"/home/dasun/BuyBuySell/app/views/shared/_feed_item.html.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
+		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
 		"/home/dasun/BuyBuySell/app/views/layouts/_utilitybar.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/images/listing/numbercircle.svg",
 		"/home/dasun/BuyBuySell/app/assets/images/listing/buybuyselllogo.svg",
@@ -133,13 +99,10 @@
 		"/home/dasun/BuyBuySell/app/controllers/listing_relationships_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/listing_relationships/destroy.js.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_follow_form.html.erb",
-		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/index.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/show.html.erb",
 		"/home/dasun/BuyBuySell/app/views/static_pages/home.html.erb",
-		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/new.html.erb",
-		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/bootstrap.js",
 		"/home/dasun/BuyBuySell/app/assets/images/header/power.svg",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/link-browse.svg",
@@ -153,8 +116,6 @@
 		"/home/dasun/BuyBuySell/app/assets/javascripts/sessions.js",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/omniauth_callbacks.js",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/svg_changer.js",
-		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
-		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
 		"/home/dasun/BuyBuySell/app/views/layouts/_sidebar.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/hoverreal-profile.svg",
 		"/home/dasun/BuyBuySell/app/views/listings/index.html.erb",
@@ -163,7 +124,6 @@
 		"/home/dasun/BuyBuySell/app/views/listings/_form.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/_form.html.erb",
 		"/home/dasun/BuyBuySell/app/models/comment.rb",
-		"/home/dasun/BuyBuySell/app/views/shared/_feed_item.html.erb",
 		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q3/secret",
 		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q3/email.x509",
 		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q3/email.req",
@@ -263,6 +223,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"star-image",
 			".transition",
 			"e7e7e7",
 			"utilitybar",
@@ -362,149 +323,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
-					"settings":
-					{
-						"buffer_size": 16488,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13301,
-								13301
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8140.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/listings/_listing.html.erb",
-					"settings":
-					{
-						"buffer_size": 1098,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								663,
-								663
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/layouts/_header.html.erb",
-					"settings":
-					{
-						"buffer_size": 1666,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								880,
-								880
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 102.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/users/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 1067,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								703,
-								703
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								245,
-								245
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -554,6 +374,14 @@
 		"selected_items":
 		[
 			[
+				"listing",
+				"app/views/listings/_listing.html.erb"
+			],
+			[
+				"feed",
+				"app/views/shared/_feed_item.html.erb"
+			],
+			[
 				"utility",
 				"app/views/layouts/_utilitybar.html.erb"
 			],
@@ -572,10 +400,6 @@
 			[
 				"applica",
 				"app/assets/javascripts/application.js"
-			],
-			[
-				"listing",
-				"app/models/listing.rb"
 			],
 			[
 				"gemfile",
@@ -636,10 +460,6 @@
 			[
 				"appl",
 				"app/views/layouts/application.html.erb"
-			],
-			[
-				"feed",
-				"app/views/shared/_feed_item.html.erb"
 			],
 			[
 				"side",
