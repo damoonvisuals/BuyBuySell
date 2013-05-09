@@ -11,17 +11,12 @@
       </span>
       <p><%= listing.description %></p>
     </div>
-    <!-- -->
-    <!-- <span>Tags: <%= raw listing.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span> -->
-    <!--<span class="timestamp">
-      Posted <%= time_ago_in_words(listing.created_at) %> ago.
-    </span>-->
     <ul style="list-style:none;margin: 0;">
       <div class="listing-button-block">
         <li style="padding:0px;">
           <div class="listing-star-button">
-            <%= link_to "#{listing.followers.count + 1}", followers_listing_path(listing), class: "listing-star-link" %>
-            <!-- <a href="<%= followers_listing_path(listing) %>">Stars: <%= listing.followers.count + 1%></a> -->
+            <%= link_to image_tag("listing/numbercircle.svg", class: "svg listing-star-image"), followers_listing_path(listing), class: "listing-star-link" %>
+            <%= link_to "#{listing.followers.count + 1}", followers_listing_path(listing), id: "count-text" %>
           </div>
         </li>
         <li style="padding:0px;">
@@ -31,10 +26,5 @@
         </li>
       </div>
     </ul>
-    <!-- <% if current_user?(listing.user) %>
-    <%= link_to "delete", listing, method: :delete,
-    data: { confirm: "Delete your listing?" },
-    title: listing.title %>
-    <% end %> -->
   </div>
 </li>

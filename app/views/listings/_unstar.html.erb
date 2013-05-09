@@ -1,0 +1,5 @@
+<%= form_for(current_user.listing_relationships.find_by_followed_id(@listing.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "Unstar", class: "btn btn-large" %>
+<% end %>

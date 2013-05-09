@@ -17,15 +17,11 @@
       </ul>
       <div class="header-right">
         <ul class="nav pull-right">
-
           <li id="fat-menu" class="dropdown">
-            <a href="#" title="Power" class="dropdown-toggle" data-toggle="dropdown" onMouseOver="this.style.backgroundColor='none'" style="padding: 16px 20px 12px 20px;">
+            <a href="#" title="Power" class="dropdown-toggle" data-toggle="dropdown" style="padding: 17px 20px 12px 20px;">
               <%= image_tag 'header/power.svg', class: "svg power-image" %>
             </a>
             <ul class="dropdown-menu">
-<!--             <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", edit_user_registration_path %></li>
-            <li class="divider"></li> -->
             <% if signed_in? %>
             <li>
               <%= link_to "Sign out", signout_path, method: "delete", style: "text-align:center;" %>

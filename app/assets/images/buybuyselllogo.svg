@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="649px" height="649px" viewBox="0 0 649 649" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page 1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon">
+            <path d="M324.5,649 C503.71641,649 649,503.71641 649,324.5 C649,145.28359 503.71641,0 324.5,0 C145.28359,0 0,145.28359 0,324.5 C0,503.71641 145.28359,649 324.5,649 Z M324.5,649" id="Oval 1 copy" fill="#D54A2D"></path>
+            <path d="M325,618 C486.81944,618 618,486.81944 618,325 C618,163.18056 486.81944,32 325,32 C163.18056,32 32,163.18056 32,325 C32,486.81944 163.18056,618 325,618 Z M325,618" id="Oval 1 copy 2" fill="#FFFFFF"></path>
+            <path d="M142,149 L142,254 L247,254 L247,149 L142,149 Z M142,149" id="Rectangle 2" fill="#D54A2D"></path>
+            <path d="M272,149 L272,254 L377,254 L377,149 L272,149 Z M272,149" id="Rectangle 2 copy" fill="#D54A2D"></path>
+            <path d="M142,404 L142,509 L247,509 L247,404 L142,404 Z M142,404" id="Rectangle 2 copy" fill="#D54A2D"></path>
+            <path d="M272,404 L272,509 L377,509 L377,404 L272,404 Z M272,404" id="Rectangle 2 copy 2" fill="#D54A2D"></path>
+            <path d="M402,150 L402,255 L507,255 L507,150 L402,150 Z M402,150" id="Rectangle 2 copy 2" fill="#D54A2D"></path>
+            <path d="M403,277 L403,382 L508,382 L508,277 L403,277 Z M403,277" id="Rectangle 2 copy 3" fill="#D54A2D"></path>
+            <path d="M403,404 L403,509 L508,509 L508,404 L403,404 Z M403,404" id="Rectangle 2 copy 4" fill="#D54A2D"></path>
+            <path d="M142,277 L142,382 L247,382 L247,277 L142,277 Z M142,277" id="Rectangle 2 copy 5" fill="#D54A2D"></path>
+        </g>
+    </g>
+</svg>

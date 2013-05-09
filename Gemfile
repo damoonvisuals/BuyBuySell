@@ -25,7 +25,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'pg_search'
-gem 'thin'
+gem 'impressionist'
 
 group :development, :test do
   # gem 'sqlite3', '1.3.5'
@@ -64,3 +64,4 @@ end
 
 gem 'rack-no-www', '0.0.2'
 gem "kaminari"
+gem 'thin'

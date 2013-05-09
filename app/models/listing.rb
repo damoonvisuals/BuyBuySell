@@ -15,6 +15,7 @@ class Listing < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   acts_as_taggable
   acts_as_commentable
+  is_impressionable
 
   validates :title, presence: true, length: { maximum: 70 }
   validates :description, presence: true, length: { maximum: 300 }
@@ -22,7 +23,6 @@ class Listing < ActiveRecord::Base
   validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
   default_scope order: 'listings.created_at DESC'
-
 
   include PgSearch
   pg_search_scope :search, against: [:title],

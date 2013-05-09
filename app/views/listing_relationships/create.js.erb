@@ -1,2 +1,2 @@
-$("#follow_form").html("<%= escape_javascript(render('listings/unfollow')) %>")
+$("#star_form").html("<%= escape_javascript(render('listings/unstar')) %>")
 $("#followers").html('Stars: <%= @listing.followers.count + 1 %>')

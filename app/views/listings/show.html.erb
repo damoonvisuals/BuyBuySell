@@ -10,46 +10,58 @@
     </ul>
     <% if not right_user and signed_in? %>
     <section>
-      <%= render 'follow_form' %>
-      <%= link_to "Message #{@listing.user.user_name}", new_conversation_path(email: @listing.user.email), class: "btn btn-large btn-primary" %>
+      <%= render 'star_form' %>
+      <%= button_to "Message #{@listing.user.user_name}", new_conversation_path(email: @listing.user.email), method: "get", class: "button" %>
+      <% if right_user %>
+      <%= link_to "delete", @listing, method: :delete,
+      data: { confirm: "Delete your listing?" },
+      title: @listing.title %>
+      <% end %>
     </section>
+    <section>
+      <p>Unique Page Views: <%= @listing.impressionist_count(filter: :ip_address) %></p>
+    <span>Tags: <%= raw @listing.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(@listing.created_at) %> ago.
+    </span>
+      </section>
+      <% end %>
+    </aside>
+    <% if right_user %>
+    <div class="span3">
+      <h3>Followers (<%= @listing.followers.count + 1 %>)</h3>
+      <%= render @listing.user %>
+      <%= render @listing.followers %>
+    </div>
     <% end %>
-  </aside>
-  <% if right_user %>
-  <div class="span3">
-    <h3>Followers (<%= @listing.followers.count + 1 %>)</h3>
-    <%= render @listing.user %>
-    <%= render @listing.followers %>
-  </div>
-<% end %>
-  <% if signed_in? %>
-  <div class="span3">
-    <h3>Bids</h3>
-    <%= render @bids %>
-    <% if not right_user %>
-    <%= simple_form_for [@listing, @bid] do |f| %>
+    <% if signed_in? %>
+    <div class="span3">
+      <h3>Bids</h3>
+      <%= render @bids %>
+      <% if not right_user %>
+      <%= simple_form_for [@listing, @bid] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.input :amount %>
       <div class="btn-group-wrap">
-        <%= f.submit "Place New Bid", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Place New Bid", class: "button" %>
       </div>
-    <% end %>
+      <% end %>
+      <% end %>
+    </div>
     <% end %>
   </div>
-  <% end %>
-</div>
-<hr />
-<h2>Comments</h2>
-<%= render @comments %>
-<%= will_paginate(@comments) %>
+  <hr />
+  <h2>Comments</h2>
+  <%= render @comments %>
+  <%= will_paginate(@comments) %>
 
 
-<%= simple_form_for [@listing, @comment] do |f| %>
+  <%= simple_form_for [@listing, @comment] do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.input :comment %>
   <div class="btn-group-wrap">
-    <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+    <%= f.submit "Post Comment", class: "button" %>
     <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-large btn-danger' %>
   </div>
-<% end %>
+  <% end %>
 

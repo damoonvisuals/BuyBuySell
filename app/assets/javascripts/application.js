@@ -16,7 +16,5 @@
 //= require twitter/bootstrap/bootstrap-dropdown
 //= require twitter/bootstrap/bootstrap-modal
 //= require twitter/bootstrap/bootstrap-tab
-//= require twitter/bootstrap/bootstrap-tooltip
-//= require twitter/bootstrap/bootstrap-popover
 //= require twitter/bootstrap/bootstrap-typeahead
 //= require_tree .

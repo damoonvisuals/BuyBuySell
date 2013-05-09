@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit, :update, :create, :destroy, :followers]
   before_filter :correct_user, only: [:edit, :update, :destroy, :followers]
+  impressionist actions: [:show]
 
   def show
     @listing = Listing.find(params[:id])

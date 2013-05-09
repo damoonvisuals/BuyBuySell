@@ -1,0 +1,9 @@
+<% unless current_user?(@listing.user) %>
+  <div id="star_form">
+  <% if current_user.following?(@listing) %>
+    <%= render 'unstar' %>
+  <% else %>
+    <%= render 'star' %>
+  <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="310px" height="310px" viewBox="0 0 310 310" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#D54A2D" offset="0%"></stop>
+            <stop stop-color="#8C2D19" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0,0 L0,306 L153,262.476092 L306,306 L306,0 L0,0 Z M0,0" id="path-2"></path>
+    </defs>
+    <g id="Page 1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Active Star" transform="translate(2.000000, 0.000000)">
+            <use id="active square" stroke="#000000" xlink:href="#path-2"></use>
+            <use id="active square-1" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <path d="M155.999992,197.035297 L106.557283,222.999999 L115.999998,168.005882 L76,129.058834 L131.278644,121.035293 L155.999994,71 L180.72136,121.035306 L236,129.058874 L195.999986,168.005893 L205.442703,223 L155.999992,197.035297 Z M155.999992,197.035297" id="Star" stroke="#641D0E" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>
