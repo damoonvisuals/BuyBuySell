@@ -51,23 +51,15 @@
 			"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
 			"settings":
 			{
-				"buffer_size": 15026,
+				"buffer_size": 16488,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layouts/_utilitybar.html.erb",
+			"file": "app/views/listings/_listing.html.erb",
 			"settings":
 			{
-				"buffer_size": 1494,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 760,
+				"buffer_size": 1098,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,7 +67,23 @@
 			"file": "app/views/layouts/_header.html.erb",
 			"settings":
 			{
-				"buffer_size": 1898,
+				"buffer_size": 1666,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/users/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 1067,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 759,
 				"line_ending": "Unix"
 			}
 		}
@@ -108,13 +116,36 @@
 	},
 	"file_history":
 	[
+		"/home/dasun/BuyBuySell/app/views/layouts/_utilitybar.html.erb",
+		"/home/dasun/BuyBuySell/app/assets/images/listing/numbercircle.svg",
+		"/home/dasun/BuyBuySell/app/assets/images/listing/buybuyselllogo.svg",
+		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/link-circle.svg",
+		"/home/dasun/BuyBuySell/app/views/listings/show.html.erb",
+		"/home/dasun/BuyBuySell/app/assets/javascripts/application.js",
+		"/home/dasun/BuyBuySell/app/models/listing.rb",
+		"/home/dasun/Scripts/mouseMod",
+		"/home/dasun/BuyBuySell/app/controllers/listings_controller.rb",
+		"/home/dasun/BuyBuySell/Gemfile",
+		"/home/dasun/BuyBuySell/app/views/listing_relationships/create.js.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_follow.html.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_unstar.html.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_star_form.html.erb",
+		"/home/dasun/BuyBuySell/app/controllers/listing_relationships_controller.rb",
+		"/home/dasun/BuyBuySell/app/views/listing_relationships/destroy.js.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_follow_form.html.erb",
+		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
+		"/home/dasun/BuyBuySell/app/views/conversations/index.html.erb",
+		"/home/dasun/BuyBuySell/app/views/conversations/show.html.erb",
+		"/home/dasun/BuyBuySell/app/views/static_pages/home.html.erb",
+		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
+		"/home/dasun/BuyBuySell/app/views/conversations/new.html.erb",
+		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/bootstrap.js",
 		"/home/dasun/BuyBuySell/app/assets/images/header/power.svg",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/link-browse.svg",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/link-mailbox.svg",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/link-listing.svg",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/link-profile.svg",
-		"/home/dasun/BuyBuySell/Gemfile",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/messages.js",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/conversations.js",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/users.js",
@@ -122,21 +153,14 @@
 		"/home/dasun/BuyBuySell/app/assets/javascripts/sessions.js",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/omniauth_callbacks.js",
 		"/home/dasun/BuyBuySell/app/assets/javascripts/svg_changer.js",
-		"/home/dasun/BuyBuySell/app/views/layouts/_header.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/home/dasun/BuyBuySell/app/views/layouts/_utilitybar.html.erb",
 		"/home/dasun/BuyBuySell/app/views/layouts/_sidebar.html.erb",
 		"/home/dasun/BuyBuySell/app/assets/images/utilitybar/hoverreal-profile.svg",
-		"/home/dasun/BuyBuySell/app/views/layouts/application.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/index.html.erb",
-		"/home/dasun/BuyBuySell/app/views/static_pages/home.html.erb",
 		"/home/dasun/BuyBuySell/app/views/devise/registrations/edit.html.erb",
 		"/home/dasun/BuyBuySell/app/views/comments/_comment.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listings/show.html.erb",
-		"/home/dasun/BuyBuySell/app/controllers/listings_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/listings/_form.html.erb",
-		"/home/dasun/BuyBuySell/app/views/conversations/new.html.erb",
 		"/home/dasun/BuyBuySell/app/views/conversations/_form.html.erb",
 		"/home/dasun/BuyBuySell/app/models/comment.rb",
 		"/home/dasun/BuyBuySell/app/views/shared/_feed_item.html.erb",
@@ -151,10 +175,6 @@
 		"/home/dasun/Downloads/pcap_tool.py",
 		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q2/explanation.txt",
 		"/home/dasun/BuyBuySell/app/uploaders/image_uploader.rb",
-		"/home/dasun/BuyBuySell/app/views/conversations/show.html.erb",
-		"/home/dasun/BuyBuySell/app/views/users/show.html.erb",
-		"/home/dasun/BuyBuySell/app/models/listing.rb",
-		"/home/dasun/BuyBuySell/app/assets/javascripts/application.js",
 		"/home/dasun/BuyBuySell/db/migrate/20130505103945_add_index_to_tag_text_listings.rb",
 		"/home/dasun/BuyBuySell/config/routes.rb",
 		"/home/dasun/BuyBuySell/db/schema.rb",
@@ -180,7 +200,6 @@
 		"/home/dasun/BuyBuySell/app/controllers/comments_controller.rb",
 		"/home/dasun/BuyBuySell/app/views/users/new.html.erb",
 		"/home/dasun/BuyBuySell/config/locales/en.yml",
-		"/home/dasun/BuyBuySell/app/controllers/listing_relationships_controller.rb",
 		"/home/dasun/BuyBuySell/app/models/listing_relationship.rb",
 		"/home/dasun/BuyBuySell/app/helpers/sessions_helper.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130502013830_create_biddables.rb",
@@ -215,11 +234,7 @@
 		"/home/dasun/BuyBuySell/app/views/users/_user.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/show_comment.html.erb",
 		"/home/dasun/BuyBuySell/app/views/shared/_stats.html.erb",
-		"/home/dasun/BuyBuySell/app/views/conversations/index.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listing_relationships/create.js.erb",
-		"/home/dasun/BuyBuySell/app/views/listing_relationships/destroy.js.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_unfollow.html.erb",
-		"/home/dasun/BuyBuySell/app/views/listings/_follow.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/_fields.html.erb",
 		"/home/dasun/BuyBuySell/app/views/listings/show_follow.html.erb",
 		"/home/dasun/BuyBuySell/spec/models/listing_spec.rb",
@@ -227,15 +242,8 @@
 		"/home/dasun/BuyBuySell/app/models/category.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130426231806_create_categorizations.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130415023316_create_listing_relationships.rb",
-		"/home/dasun/BuyBuySell/app/views/listings/_follow_form.html.erb",
 		"/home/dasun/BuyBuySell/app/controllers/static_pages_controller.rb",
-		"/home/dasun/BuyBuySell/app/views/listings/_form.htmlerb",
-		"/home/dasun/BuyBuySell/app/controllers/application_controller.rb",
-		"/home/dasun/BuyBuySell/spec/requests/user_pages_spec.rb",
-		"/home/dasun/BuyBuySell/app/views/users/show_message.html.erb",
-		"/home/dasun/BuyBuySell/config/environments/test.rb",
-		"/home/dasun/BuyBuySell/app/views/messages/_form.html.erb",
-		"/home/dasun/BuyBuySell/app/views/shared/_msg.html.erb"
+		"/home/dasun/BuyBuySell/app/views/listings/_form.htmlerb"
 	],
 	"find":
 	{
@@ -255,6 +263,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".transition",
+			"e7e7e7",
+			"utilitybar",
+			"3c3c3c",
+			"text",
+			".transition",
+			"box-shadow",
+			"inset",
+			"section",
+			"inset",
 			"background-color:",
 			"logo",
 			"decoration",
@@ -344,7 +362,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -352,15 +370,15 @@
 					"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
 					"settings":
 					{
-						"buffer_size": 15026,
+						"buffer_size": 16488,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6691,
-								6691
+								13301,
+								13301
 							]
 						],
 						"settings":
@@ -370,25 +388,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3992.0,
+						"translation.y": 8140.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/layouts/_utilitybar.html.erb",
+					"file": "app/views/listings/_listing.html.erb",
 					"settings":
 					{
-						"buffer_size": 1494,
+						"buffer_size": 1098,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								375,
-								375
+								663,
+								663
 							]
 						],
 						"settings":
@@ -405,18 +423,46 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/layouts/application.html.erb",
+					"file": "app/views/layouts/_header.html.erb",
 					"settings":
 					{
-						"buffer_size": 760,
+						"buffer_size": 1666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								393,
-								393
+								880,
+								880
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/users/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 1067,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								703,
+								703
 							]
 						],
 						"settings":
@@ -432,19 +478,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/views/layouts/_header.html.erb",
+					"buffer": 4,
+					"file": "app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 1898,
+						"buffer_size": 759,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								749,
-								749
+								245,
+								245
 							]
 						],
 						"settings":
@@ -508,16 +554,52 @@
 		"selected_items":
 		[
 			[
+				"utility",
+				"app/views/layouts/_utilitybar.html.erb"
+			],
+			[
+				"app",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"show",
+				"app/views/listings/show.html.erb"
+			],
+			[
 				"header",
 				"app/views/layouts/_header.html.erb"
 			],
 			[
 				"applica",
-				"app/views/layouts/application.html.erb"
+				"app/assets/javascripts/application.js"
 			],
 			[
-				"utility",
-				"app/views/layouts/_utilitybar.html.erb"
+				"listing",
+				"app/models/listing.rb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"un",
+				"app/views/listings/_unfollow.html.erb"
+			],
+			[
+				"follow",
+				"app/views/listings/_follow.html.erb"
+			],
+			[
+				"index",
+				"app/views/conversations/index.html.erb"
+			],
+			[
+				"conversations",
+				"app/views/conversations/new.html.erb"
+			],
+			[
+				"home",
+				"app/views/static_pages/home.html.erb"
 			],
 			[
 				"boot",
@@ -526,14 +608,6 @@
 			[
 				"gemfil",
 				"Gemfile"
-			],
-			[
-				"listing",
-				"app/views/listings/_listing.html.erb"
-			],
-			[
-				"index",
-				"app/views/listings/index.html.erb"
 			],
 			[
 				"sidebar",
@@ -552,20 +626,12 @@
 				"app/views/conversations/new.html.erb"
 			],
 			[
-				"home",
-				"app/views/static_pages/home.html.erb"
-			],
-			[
 				"edit",
 				"app/views/devise/registrations/edit.html.erb"
 			],
 			[
 				"comment",
 				"app/views/comments/_comment.html.erb"
-			],
-			[
-				"show",
-				"app/views/listings/show.html.erb"
 			],
 			[
 				"appl",
@@ -578,10 +644,6 @@
 			[
 				"side",
 				"app/views/layouts/_sidebar.html.erb"
-			],
-			[
-				"app",
-				"app/views/layouts/application.html.erb"
 			],
 			[
 				"head",
@@ -622,10 +684,6 @@
 			[
 				"data",
 				"config/database.yml"
-			],
-			[
-				"gemfile",
-				"Gemfile"
 			],
 			[
 				"shared",
@@ -1006,18 +1064,6 @@
 			[
 				"sam",
 				"lib/tasks/sample_data.rake"
-			],
-			[
-				"user_pa",
-				"spec/requests/user_pages_spec.rb"
-			],
-			[
-				"user.",
-				"app/models/user.rb"
-			],
-			[
-				"fact",
-				"spec/factories.rb"
 			]
 		],
 		"width": 0.0
