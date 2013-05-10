@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container" style="padding-left: 190px; padding-right: 65px; width: auto; position: relative;">
+    <div class="container hidden-phone" style="padding-left: 190px; padding-right: 65px; width: auto; position: relative;">
       <div class="header-left">
         <ul class="nav" style="margin: 0px;">
           <li>
@@ -22,20 +22,36 @@
               <%= image_tag 'header/power.svg', class: "svg power-image" %>
             </a>
             <ul class="dropdown-menu">
-            <% if signed_in? %>
-            <li>
-              <%= link_to "Sign out", signout_path, method: "delete", style: "text-align:center;" %>
-            </li>
-            <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-            <li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
-            <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
-            <li><%= link_to "Google", user_omniauth_authorize_path(:google_oauth2) %></li>
-            <% end %>
-          </ul>
+              <% if signed_in? %>
+              <li>
+                <%= link_to "Sign out", signout_path, method: "delete", style: "text-align:center;" %>
+              </li>
+              <% else %>
+              <li><%= link_to "Sign in", signin_path %></li>
+              <li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
+              <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
+              <li><%= link_to "Google", user_omniauth_authorize_path(:google_oauth2) %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container visible-phone" style="padding-right: 65px; width: auto; position: relative;">
+      <ul class="nav" style="width: 100%;">
+        <li>
+          <%= form_tag listings_path, method: :get, class: "navbar-search", style: "margin-left: 5px;" do %>
+          <%= text_field_tag :query, params[:query], class: "search-query", placeholder: "Search for anything.." %>
+          <% end %>
         </li>
       </ul>
+      <div class="header-right">
+          <a class="btn btn-navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+      </div>
     </div>
   </div>
-</div>
 </header>

@@ -4,12 +4,33 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta content='width=device-width, initial-scale=1.0' name='viewport'>
   <%= render 'layouts/shim' %>
 
-  <%= favicon_link_tag 'bbsfavicn.png' %>
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <!-- Size should be 144 x 144 pixels -->
+  <%= favicon_link_tag 'favicons/144x144favicon.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+  <!-- For iPhone with high-resolution Retina display: -->
+  <!-- Size should be 114 x 114 pixels -->
+  <%= favicon_link_tag 'favicons/114x114favicon.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+  <!-- For first- and second-generation iPad: -->
+  <!-- Size should be 72 x 72 pixels -->
+  <%= favicon_link_tag 'favicons/72x72favicon.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <!-- Size should be 57 x 57 pixels -->
+  <%= favicon_link_tag 'favicons/57x57favicon.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+  <!-- For all other devices -->
+  <!-- Size should be 32 x 32 pixels -->
+  <%= favicon_link_tag 'favicons/32x32favicon.png', :rel => 'shortcut icon' %>
 </head>
 <body style='font-family: "Quicksand", Arial, sans-serif;'>
+
   <%= render 'layouts/header' %>
   <div class="container" style="padding-top: 15px;">
 
@@ -17,8 +38,27 @@
     <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
     <%= yield %>
-    <!-- <%= render 'layouts/footer' %> -->
-    <%= debug(params) if Rails.env.development? %>
+
+    <% if Rails.env.development? %>
+    <%= debug(params) %>
+    <div class="responsive-dump">
+      <h4>Visible on...</h4>
+      <p>Green checkmarks indicate that class is visible in your current viewport.</p>
+      <ul class="responsive-utilities-test">
+        <li>Phone<span class="visible-phone">&#10004; Phone</span></li>
+        <li>Tablet<span class="visible-tablet">&#10004; Tablet</span></li>
+        <li>Desktop<span class="visible-desktop">&#10004; Desktop</span></li>
+      </ul>
+      <h4>Hidden on...</h4>
+      <p>Here, green checkmarks indicate that class is hidden in your current viewport.</p>
+      <ul class="responsive-utilities-test hidden-on">
+        <li>Phone<span class="hidden-phone">&#10004; Phone</span></li>
+        <li>Tablet<span class="hidden-tablet">&#10004; Tablet</span></li>
+        <li>Desktop<span class="hidden-desktop">&#10004; Desktop</span></li>
+      </ul>
+    </div>
+    <% end %>
+
   </div>
 
   <% if signed_in? %>
