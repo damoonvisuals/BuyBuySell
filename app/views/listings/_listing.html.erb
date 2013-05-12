@@ -13,7 +13,7 @@
   <ul style="list-style:none;margin: 0;">
     <div class="listing-button-block">
       <li style="padding:0px;">
-        <div class="listing-star-button <%= "starred" if listing.user == current_user or current_user.following?(listing)%>">
+        <div class="listing-star-button <%= "starred" if signed_in? and listing.user == current_user or current_user.following?(listing)%>">
           <%= link_to "#{listing.followers.count + 1}", followers_listing_path(listing), class: "listing-star-link" %>
         </div>
       </li>

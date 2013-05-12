@@ -1,7 +1,9 @@
 <% if @feed_items.any? %>
-  <ol class="listings">
+<center>
+  <div class="listings">
     <!-- This causes render to use given partial to render each element in collection -->
     <%= render partial: 'shared/feed_item', collection: @feed_items %>
-  </ol>
+  </div>
+</center>
   <%= will_paginate @feed_items %>
 <% end %>

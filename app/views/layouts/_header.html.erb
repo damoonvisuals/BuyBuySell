@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container hidden-phone" style="padding-left: 190px; padding-right: 65px; width: auto; position: relative;">
+    <div class="container-fluid hidden-phone" style="padding-left: 190px; padding-right: 65px; width: auto; position: relative;">
       <div class="header-left">
         <ul class="nav" style="margin: 0px;">
           <li>
@@ -37,7 +37,7 @@
         </ul>
       </div>
     </div>
-    <div class="container visible-phone" style="padding-right: 65px; width: auto; position: relative;">
+    <div class="container-fluid visible-phone" style="padding-right: 65px; width: auto; position: relative;">
       <ul class="nav" style="width: 100%;">
         <li>
           <%= form_tag listings_path, method: :get, class: "navbar-search", style: "margin-left: 5px;" do %>
@@ -46,11 +46,18 @@
         </li>
       </ul>
       <div class="header-right">
-          <a class="btn btn-navbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <div class="container-fluid nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "Link2", "/path2"  %></li>
+            <li><%= link_to "Link3", "/path3"  %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
   </div>

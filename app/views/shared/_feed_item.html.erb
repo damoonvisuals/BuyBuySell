@@ -1,29 +1,27 @@
-<li id=<%= feed_item.id %>>
-  <div class="listing-block">
-    <div class="listing-image-block">
-      <span class="image_placeholder">
-        <%= image_tag feed_item.image_url(:thumb).to_s %>
-      </span>
-    </div>
-    <div class="listing-content-block">
-      <span class="listing-title">
-        <%= link_to "#{feed_item.title} - $#{feed_item.price}", feed_item %>
-      </span>
-      <p><%= feed_item.description %></p>
-    </div>
-    <ul style="list-style:none;margin: 0;">
-      <div class="listing-button-block">
-        <li style="padding:0px;">
-          <div class="listing-star-button starred">
-            <%= link_to "#{feed_item.followers.count + 1}", followers_listing_path(feed_item), class: "listing-star-link" %>
-          </div>
-        </li>
-        <li style="padding:0px;">
-          <div class="listing-readmore-button">
-            <%= link_to "read more", feed_item, class: "listing-readmore-link" %>
-          </div>
-        </li>
-      </div>
-    </ul>
+<div class="listing-block">
+  <div class="listing-image-block">
+    <span class="image_placeholder">
+      <%= image_tag feed_item.image_url(:thumb).to_s %>
+    </span>
   </div>
-</li>
+  <div class="listing-content-block">
+    <span class="listing-title">
+      <%= link_to "#{feed_item.title} - $#{feed_item.price}", feed_item %>
+    </span>
+    <p><%= feed_item.description %></p>
+  </div>
+  <ul style="list-style:none;margin: 0;">
+    <div class="listing-button-block">
+      <li style="padding:0px;">
+        <div class="listing-star-button starred">
+          <%= link_to "#{feed_item.followers.count + 1}", followers_listing_path(feed_item), class: "listing-star-link" %>
+        </div>
+      </li>
+      <li style="padding:0px;">
+        <div class="listing-readmore-button">
+          <%= link_to "read more", feed_item, class: "listing-readmore-link" %>
+        </div>
+      </li>
+    </div>
+  </ul>
+</div>

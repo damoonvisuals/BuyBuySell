@@ -5,6 +5,10 @@
 		[
 			[
 				"margin",
+				"margin"
+			],
+			[
+				"mar",
 				"margin-right"
 			],
 			[
@@ -59,7 +63,7 @@
 			"file": "app/views/layouts/application.html.erb",
 			"settings":
 			{
-				"buffer_size": 1768,
+				"buffer_size": 2824,
 				"line_ending": "Unix"
 			}
 		},
@@ -67,7 +71,7 @@
 			"file": "app/views/layouts/_header.html.erb",
 			"settings":
 			{
-				"buffer_size": 2381,
+				"buffer_size": 2718,
 				"line_ending": "Unix"
 			}
 		},
@@ -84,6 +88,25 @@
 			"settings":
 			{
 				"buffer_size": 307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
+			"settings":
+			{
+				"buffer_size": 18003,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge,chrome=1\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title><%= content_for?(:title) ? yield(:title) : \"Buybuysell\" %></title>\n    <%= csrf_meta_tags %>\n\n    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->\n    <!--[if lt IE 9]>\n      <script src=\"//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js\" type=\"text/javascript\"></script>\n    <![endif]-->\n\n    <%= stylesheet_link_tag \"application\", :media => \"all\" %>\n\n    <!-- For third-generation iPad with high-resolution Retina display: -->\n    <!-- Size should be 144 x 144 pixels -->\n    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>\n\n    <!-- For iPhone with high-resolution Retina display: -->\n    <!-- Size should be 114 x 114 pixels -->\n    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>\n\n    <!-- For first- and second-generation iPad: -->\n    <!-- Size should be 72 x 72 pixels -->\n    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>\n\n    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->\n    <!-- Size should be 57 x 57 pixels -->\n    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>\n\n    <!-- For all other devices -->\n    <!-- Size should be 32 x 32 pixels -->\n    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>\n  </head>\n  <body>\n\n    <div class=\"navbar navbar-fluid-top\">\n      <div class=\"navbar-inner\">\n        <div class=\"container-fluid\">\n          <a class=\"btn btn-navbar\" data-target=\".nav-collapse\" data-toggle=\"collapse\">\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </a>\n          <a class=\"brand\" href=\"#\">Buybuysell</a>\n          <div class=\"container-fluid nav-collapse\">\n            <ul class=\"nav\">\n              <li><%= link_to \"Link1\", \"/path1\"  %></li>\n              <li><%= link_to \"Link2\", \"/path2\"  %></li>\n              <li><%= link_to \"Link3\", \"/path3\"  %></li>\n            </ul>\n          </div><!--/.nav-collapse -->\n        </div>\n      </div>\n    </div>\n\n    <div class=\"container-fluid\">\n      <div class=\"row-fluid\">\n        <div class=\"span3\">\n          <div class=\"well sidebar-nav\">\n            <ul class=\"nav nav-list\">\n              <li class=\"nav-header\">Sidebar</li>\n              <li><%= link_to \"Link1\", \"/path1\"  %></li>\n              <li><%= link_to \"Link2\", \"/path2\"  %></li>\n              <li><%= link_to \"Link3\", \"/path3\"  %></li>\n            </ul>\n          </div><!--/.well -->\n        </div><!--/span-->\n        <div class=\"span9\">\n          <%= bootstrap_flash %>\n          <%= yield %>\n        </div>\n      </div><!--/row-->\n\n      <footer>\n        <p>&copy; Company 2013</p>\n      </footer>\n\n    </div> <!-- /container -->\n\n    <!-- Javascripts\n    ================================================== -->\n    <!-- Placed at the end of the document so the pages load faster -->\n    <%= javascript_include_tag \"application\" %>\n\n  </body>\n</html>\n",
+			"file": "app/views/layouts/_twitter_fluid.html.erb",
+			"file_size": 3444,
+			"file_write_time": 1368188450000000,
+			"settings":
+			{
+				"buffer_size": 3472,
 				"line_ending": "Unix"
 			}
 		}
@@ -116,10 +139,12 @@
 	},
 	"file_history":
 	[
-		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
-		"/home/dasun/BuyBuySell/app/views/conversations/index.html.erb",
+		"/home/dasun/BuyBuySell/config/initializers/devise.rb",
+		"/home/dasun/BuyBuySell/app/uploaders/image_uploader.rb",
 		"/home/dasun/BuyBuySell/app/views/layouts/_twitter_fluid.html.erb",
+		"/home/dasun/BuyBuySell/app/views/listings/_listing.html.erb",
+		"/home/dasun/BuyBuySell/app/assets/stylesheets/bootstrap_and_overrides.css.less",
+		"/home/dasun/BuyBuySell/app/views/conversations/index.html.erb",
 		"/home/dasun/BuyBuySell/config/routes.rb",
 		"/home/dasun/.config/sublime-text-2/Packages/User/Railscasts.tmTheme",
 		"/home/dasun/BuyBuySell/Gemfile",
@@ -177,7 +202,6 @@
 		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q2/secret",
 		"/home/dasun/Downloads/pcap_tool.py",
 		"/home/dasun/Documents/Berkeley/cs161/projects/proj2/q2/explanation.txt",
-		"/home/dasun/BuyBuySell/app/uploaders/image_uploader.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130505103945_add_index_to_tag_text_listings.rb",
 		"/home/dasun/BuyBuySell/db/schema.rb",
 		"/home/dasun/BuyBuySell/db/migrate/20130505103640_add_tag_text_to_listings.rb",
@@ -210,7 +234,6 @@
 		"/home/dasun/BuyBuySell/config/application.rb",
 		"/home/dasun/BuyBuySell/config.ru",
 		"/home/dasun/BuyBuySell/app/views/devise/registrations/new.html.erb",
-		"/home/dasun/BuyBuySell/config/initializers/devise.rb",
 		"/home/dasun/BuyBuySell/app/views/devise/shared/_links.erb",
 		"/home/dasun/BuyBuySell/app/views/shared/_error_messages.html.erb",
 		"/home/dasun/BuyBuySell/config/initializers/omniauth.rb",
@@ -263,6 +286,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"listings",
 			"listing",
 			"inset",
 			"lih",
@@ -372,7 +396,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -380,15 +404,15 @@
 					"file": "app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 1768,
+						"buffer_size": 2824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								357,
-								357
+								432,
+								432
 							]
 						],
 						"settings":
@@ -398,7 +422,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 255.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -408,15 +432,15 @@
 					"file": "app/views/layouts/_header.html.erb",
 					"settings":
 					{
-						"buffer_size": 2381,
+						"buffer_size": 2718,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2193,
-								2193
+								2366,
+								2366
 							]
 						],
 						"settings":
@@ -426,7 +450,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 453.0,
+						"translation.y": 504.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -471,8 +495,8 @@
 						"selection":
 						[
 							[
-								265,
-								265
+								237,
+								237
 							]
 						],
 						"settings":
@@ -481,6 +505,62 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/stylesheets/bootstrap_and_overrides.css.less",
+					"settings":
+					{
+						"buffer_size": 18003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13385,
+								13385
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7944.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/layouts/_twitter_fluid.html.erb",
+					"settings":
+					{
+						"buffer_size": 3472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1965,
+								1965
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -534,8 +614,12 @@
 		"selected_items":
 		[
 			[
-				"index",
-				"app/views/listings/index.html.erb"
+				"twitt",
+				"app/views/layouts/_twitter_fluid.html.erb"
+			],
+			[
+				"tw",
+				"app/views/layouts/_twitter_fluid.html.erb"
 			],
 			[
 				"listing",
@@ -544,6 +628,10 @@
 			[
 				"boot",
 				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+			],
+			[
+				"index",
+				"app/views/listings/index.html.erb"
 			],
 			[
 				"utility",
@@ -1036,14 +1124,6 @@
 			[
 				"_micro",
 				"app/views/shared/_micropost_form.html.erb"
-			],
-			[
-				"h",
-				"app/views/static_pages/help.html.erb"
-			],
-			[
-				"micropost",
-				"spec/requests/micropost_pages_spec.rb"
 			]
 		],
 		"width": 0.0
